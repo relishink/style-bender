@@ -1,0 +1,4 @@
+# Design owns tokens and global styles.
+/tokens/        @relishink
+/src/styles/    @relishink
+/src/index.css  @relishink
