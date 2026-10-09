@@ -25,3 +25,12 @@ One entry per working session: what we did, what broke, the fix, and any prompt 
 > Do ALL Figma reads and writes through `use_figma`. Never call get_design_context, get_variable_defs, get_metadata or get_screenshot without asking me.
 
 Putting the tool-cost constraint in the brief up front kept the whole session inside the Figma read cap.
+
+## 2026-10-09: Dropped Storybook
+
+**What we did**
+- Removed Storybook and its stories. The goal is a direct 1:1 match between Figma and the coded style guide, and Storybook was a third surface in between.
+- Reframed roles: David (designer, in Figma) works with Claude; a separate style guide team builds and maintains the coded style guide.
+
+**Lesson**
+- Decide what the "rendered truth" is before adding tooling. `storybook init` is one command, but every extra surface is another place where drift can hide.

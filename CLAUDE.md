@@ -1,9 +1,14 @@
 # style-bender
 
-A small showcase design system. Design owns tokens and CSS in this coded library; Figma is a 1:1 mirror of it. The repo doubles as a training demo, so prefer clear, well-explained steps over clever ones.
+A small showcase that proves a 1:1 match between a Figma library and a custom coded style guide. The repo doubles as a training demo, so prefer clear, well-explained steps over clever ones.
+
+## Roles
+- **Design (David in Figma, with Claude):** owns tokens and visual intent.
+- **Style guide team (engineering):** builds and maintains the coded style guide in this repo.
+- The coded style guide is the only rendered reference. There is no Storybook or other middle layer: Figma is compared directly with the style guide app.
 
 ## Stack
-Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`), Tailwind v4 reading CSS variables generated from tokens, Storybook, and a DTCG 2025.10 token pipeline (Style Dictionary or Terrazzo, chosen in Phase 1).
+Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`), Tailwind v4 reading CSS variables generated from tokens, and a DTCG 2025.10 token pipeline (Style Dictionary or Terrazzo, chosen in Phase 1).
 
 ## Ground rules
 1. **Git is the source of truth.** When Figma and code disagree, stop and show the diff to David.
@@ -22,16 +27,17 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - Foundations: color tokens (light and dark), typography scale.
 - Components: Button (primary, secondary, tertiary, ghost, danger; 3 sizes), Banner (from shadcn Alert: info, success, warning, error), Heading/Text.
 - Card is a later walkthrough. Do not add it yet.
-- Docs follow Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs.
+- The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
+- No Storybook.
 
 ## Layout
 - `tokens/`: DTCG token JSON (design-owned, see CODEOWNERS).
-- `src/components/ui/`: shadcn components and their stories.
+- `src/components/ui/`: shadcn components.
 - `docs/`: `foundations/`, `components/`, `lesson-log.md`.
 - `figma-map.json`: Figma component to code mapping.
 
 ## Commands
-- `npm run dev`: app. `npm run storybook`: Storybook on :6006. `npm run build`: typecheck + build. `npm run lint`.
+- `npm run dev`: style guide app. `npm run build`: typecheck + build. `npm run lint`.
 
 ## Tools
 - `gh` is at `~/.local/bin/gh`, logged in with a fine-grained token for this repo only. Never touch other repos or orgs.
