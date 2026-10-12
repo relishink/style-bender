@@ -1,0 +1,702 @@
+{
+  "exportedAt": "2026-10-12T19:23:51.701Z",
+  "variables": {
+    "--radius-sm": {
+      "figma": "radius-sm",
+      "light": 6,
+      "dark": 6
+    },
+    "--radius-md": {
+      "figma": "radius-md",
+      "light": 8,
+      "dark": 8
+    },
+    "--radius": {
+      "figma": "radius-lg (radius)",
+      "light": 10,
+      "dark": 10
+    },
+    "--radius-xl": {
+      "figma": "radius-xl",
+      "light": 14,
+      "dark": 14
+    },
+    "--radius-2xl": {
+      "figma": "radius-2xl",
+      "light": 18,
+      "dark": 18
+    },
+    "--radius-3xl": {
+      "figma": "radius-3xl",
+      "light": 22,
+      "dark": 22
+    },
+    "--radius-4xl": {
+      "figma": "radius-4xl",
+      "light": 26,
+      "dark": 26
+    },
+    "--neutral-0": {
+      "figma": "theme/neutrals/0",
+      "light": {
+        "hex": "#ffffff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffffff",
+        "alpha": 1
+      }
+    },
+    "--neutral-50": {
+      "figma": "theme/neutrals/50",
+      "light": {
+        "hex": "#fafafa",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--neutral-100": {
+      "figma": "theme/neutrals/100",
+      "light": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      }
+    },
+    "--neutral-200": {
+      "figma": "theme/neutrals/200",
+      "light": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      }
+    },
+    "--neutral-300": {
+      "figma": "theme/neutrals/300",
+      "light": {
+        "hex": "#d4d4d4",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#d4d4d4",
+        "alpha": 1
+      }
+    },
+    "--neutral-400": {
+      "figma": "theme/neutrals/400",
+      "light": {
+        "hex": "#a3a3a3",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#a3a3a3",
+        "alpha": 1
+      }
+    },
+    "--neutral-500": {
+      "figma": "theme/neutrals/500",
+      "light": {
+        "hex": "#737373",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#737373",
+        "alpha": 1
+      }
+    },
+    "--neutral-600": {
+      "figma": "theme/neutrals/600",
+      "light": {
+        "hex": "#525252",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#525252",
+        "alpha": 1
+      }
+    },
+    "--neutral-700": {
+      "figma": "theme/neutrals/700",
+      "light": {
+        "hex": "#404040",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#404040",
+        "alpha": 1
+      }
+    },
+    "--neutral-800": {
+      "figma": "theme/neutrals/800",
+      "light": {
+        "hex": "#262626",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--neutral-900": {
+      "figma": "theme/neutrals/900",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#171717",
+        "alpha": 1
+      }
+    },
+    "--neutral-950": {
+      "figma": "theme/neutrals/950",
+      "light": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      }
+    },
+    "--chart-1": {
+      "figma": "chart colors/chart 1",
+      "light": {
+        "hex": "#d4d4d4",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#d4d4d4",
+        "alpha": 1
+      }
+    },
+    "--chart-2": {
+      "figma": "chart colors/chart 2",
+      "light": {
+        "hex": "#737373",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#737373",
+        "alpha": 1
+      }
+    },
+    "--chart-3": {
+      "figma": "chart colors/chart 3",
+      "light": {
+        "hex": "#525252",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#525252",
+        "alpha": 1
+      }
+    },
+    "--chart-4": {
+      "figma": "chart colors/chart 4",
+      "light": {
+        "hex": "#404040",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#404040",
+        "alpha": 1
+      }
+    },
+    "--chart-5": {
+      "figma": "chart colors/chart 5",
+      "light": {
+        "hex": "#262626",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--red-400": {
+      "figma": "tw-raw/red/400",
+      "light": {
+        "hex": "#ff6467",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ff6467",
+        "alpha": 1
+      }
+    },
+    "--red-600": {
+      "figma": "tw-raw/red/600",
+      "light": {
+        "hex": "#e7000b",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#e7000b",
+        "alpha": 1
+      }
+    },
+    "--blue-700": {
+      "figma": "tw-raw/blue/700",
+      "light": {
+        "hex": "#1447e6",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#1447e6",
+        "alpha": 1
+      }
+    },
+    "--background": {
+      "figma": "shadcn colors/general/background",
+      "light": {
+        "hex": "#ffffff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      }
+    },
+    "--foreground": {
+      "figma": "shadcn colors/general/foreground",
+      "light": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--primary": {
+      "figma": "shadcn colors/general/primary",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      }
+    },
+    "--primary-foreground": {
+      "figma": "shadcn colors/general/primary foreground",
+      "light": {
+        "hex": "#fafafa",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#171717",
+        "alpha": 1
+      }
+    },
+    "--secondary": {
+      "figma": "shadcn colors/general/secondary",
+      "light": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--secondary-foreground": {
+      "figma": "shadcn colors/general/secondary foreground",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--accent": {
+      "figma": "shadcn colors/general/accent",
+      "light": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--accent-foreground": {
+      "figma": "shadcn colors/general/accent foreground",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--muted": {
+      "figma": "shadcn colors/general/muted",
+      "light": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--muted-foreground": {
+      "figma": "shadcn colors/general/muted foreground",
+      "light": {
+        "hex": "#737373",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#a3a3a3",
+        "alpha": 1
+      }
+    },
+    "--destructive": {
+      "figma": "shadcn colors/general/destructive",
+      "light": {
+        "hex": "#e7000b",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ff6467",
+        "alpha": 1
+      }
+    },
+    "--border": {
+      "figma": "shadcn colors/general/border",
+      "light": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffffff",
+        "alpha": 0.1
+      }
+    },
+    "--input": {
+      "figma": "shadcn colors/general/input",
+      "light": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffffff",
+        "alpha": 0.15
+      }
+    },
+    "--card": {
+      "figma": "shadcn colors/general/card",
+      "light": {
+        "hex": "#ffffff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#171717",
+        "alpha": 1
+      }
+    },
+    "--card-foreground": {
+      "figma": "shadcn colors/general/card foreground",
+      "light": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--popover": {
+      "figma": "shadcn colors/general/popover",
+      "light": {
+        "hex": "#ffffff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#171717",
+        "alpha": 1
+      }
+    },
+    "--popover-foreground": {
+      "figma": "shadcn colors/general/popover foreground",
+      "light": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--ring": {
+      "figma": "shadcn colors/focus/ring",
+      "light": {
+        "hex": "#a3a3a3",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#737373",
+        "alpha": 1
+      }
+    },
+    "--sidebar": {
+      "figma": "shadcn colors/sidebar/sidebar",
+      "light": {
+        "hex": "#fafafa",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#171717",
+        "alpha": 1
+      }
+    },
+    "--sidebar-foreground": {
+      "figma": "shadcn colors/sidebar/sidebar foreground",
+      "light": {
+        "hex": "#0a0a0a",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--sidebar-accent": {
+      "figma": "shadcn colors/sidebar/sidebar accent",
+      "light": {
+        "hex": "#f5f5f5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#262626",
+        "alpha": 1
+      }
+    },
+    "--sidebar-accent-foreground": {
+      "figma": "shadcn colors/sidebar/sidebar accent foreground",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--sidebar-primary": {
+      "figma": "shadcn colors/sidebar/sidebar primary",
+      "light": {
+        "hex": "#171717",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#1447e6",
+        "alpha": 1
+      }
+    },
+    "--sidebar-primary-foreground": {
+      "figma": "shadcn colors/sidebar/sidebar primary foreground",
+      "light": {
+        "hex": "#fafafa",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#fafafa",
+        "alpha": 1
+      }
+    },
+    "--sidebar-border": {
+      "figma": "shadcn colors/sidebar/sidebar border",
+      "light": {
+        "hex": "#e5e5e5",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffffff",
+        "alpha": 0.1
+      }
+    },
+    "--sidebar-ring": {
+      "figma": "shadcn colors/sidebar/sidebar ring",
+      "light": {
+        "hex": "#a3a3a3",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#737373",
+        "alpha": 1
+      }
+    }
+  },
+  "textStyles": {
+    "heading 1": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 40,
+      "lineHeight": 40,
+      "letterSpacing": -1.5
+    },
+    "heading 2": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 26,
+      "lineHeight": 26,
+      "letterSpacing": -1
+    },
+    "heading 3": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 22,
+      "lineHeight": 26.4,
+      "letterSpacing": -0.5
+    },
+    "heading 4": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 18,
+      "lineHeight": 21.6,
+      "letterSpacing": 0
+    },
+    "caption": {
+      "fontFamily": "Geist",
+      "fontStyle": "Regular",
+      "fontSize": 13,
+      "lineHeight": 20.5,
+      "letterSpacing": 1
+    },
+    "paragraph large/normal": {
+      "fontFamily": "Geist",
+      "fontStyle": "Regular",
+      "fontSize": 18,
+      "lineHeight": 27,
+      "letterSpacing": 0
+    },
+    "paragraph large/medium": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 18,
+      "lineHeight": 27,
+      "letterSpacing": 0
+    },
+    "paragraph large/bold": {
+      "fontFamily": "Geist",
+      "fontStyle": "SemiBold",
+      "fontSize": 18,
+      "lineHeight": 27,
+      "letterSpacing": 0
+    },
+    "paragraph/normal": {
+      "fontFamily": "Geist",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    "paragraph/medium": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    "paragraph/bold": {
+      "fontFamily": "Geist",
+      "fontStyle": "SemiBold",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    "paragraph small/normal": {
+      "fontFamily": "Geist",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "paragraph small/medium": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "paragraph small/bold": {
+      "fontFamily": "Geist",
+      "fontStyle": "SemiBold",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "paragraph mini/normal": {
+      "fontFamily": "Geist",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "paragraph mini/medium": {
+      "fontFamily": "Geist",
+      "fontStyle": "Medium",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "paragraph mini/bold": {
+      "fontFamily": "Geist",
+      "fontStyle": "SemiBold",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "monospace/normal": {
+      "fontFamily": "Geist Mono",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    "monospace/medium": {
+      "fontFamily": "Geist Mono",
+      "fontStyle": "Medium",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    "monospace small/normal": {
+      "fontFamily": "Geist Mono",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "monospace mini/normal": {
+      "fontFamily": "Geist Mono",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "monospace mini/medium": {
+      "fontFamily": "Geist Mono",
+      "fontStyle": "Medium",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    }
+  }
+}
