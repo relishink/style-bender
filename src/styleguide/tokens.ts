@@ -87,3 +87,45 @@ export const typeStyles: TypeStyle[] = Object.entries(typeTokens)
       letterSpacing: v.letterSpacing.value,
     }
   })
+
+// Figma <-> code mapping
+import figmaMap from '../../figma-map.json'
+export type ComponentMapping = (typeof figmaMap.components)[number]
+export const mappingFor = (name: string) => figmaMap.components.find((c) => c.name === name)
+
+// Colors as they resolve in Figma (from the snapshot), for contrast checks.
+export const figmaColor = (css: string, theme: 'light' | 'dark') => figmaVariables[css]?.[theme] as FigmaColor | undefined
+
+// WCAG 2.x contrast ratio between two opaque sRGB hex colors.
+function luminance(hex: string) {
+  const [r, g, b] = [1, 3, 5].map((i) => {
+    const c = parseInt(hex.slice(i, i + 2), 16) / 255
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
+  })
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b
+}
+export function contrast(a: string, b: string) {
+  const [l1, l2] = [luminance(a), luminance(b)].sort((x, y) => y - x)
+  return Math.round(((l1 + 0.05) / (l2 + 0.05)) * 100) / 100
+}
+
+// Reads the cva() variants from a component's source so the Specifications tab lists the
+// tokens each variant actually uses (bg-primary -> --primary).
+const TOKEN_UTILITY = /(?:^|:)(bg|text|border|ring|outline)-([a-z]+(?:-[a-z]+)*)(?:\/(\d+))?$/
+export function variantTokens(source: string, prop: string) {
+  const start = source.indexOf('variants: {')
+  const block = source.slice(start, source.indexOf('defaultVariants', start))
+  const propStart = block.indexOf(`${prop}: {`)
+  const propBlock = block.slice(propStart, block.indexOf('\n      },', propStart))
+  const out: Record<string, string[]> = {}
+  for (const m of propBlock.matchAll(/\n\s+"?([\w-]+)"?:\s*"([^"]*)"/g)) {
+    const tokens = new Set<string>()
+    for (const cls of m[2].split(/\s+/)) {
+      const t = TOKEN_UTILITY.exec(cls)
+      if (!t || !(`--${t[2]}` in figmaVariables)) continue
+      tokens.add(`--${t[2]}${t[3] ? ` @ ${t[3]}%` : ''}`)
+    }
+    out[m[1]] = [...tokens]
+  }
+  return out
+}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { BannerPage } from './styleguide/BannerPage'
+import { ButtonPage } from './styleguide/ButtonPage'
 import { ColorPage } from './styleguide/ColorPage'
 import { Layout } from './styleguide/Layout'
 import { TypographyPage } from './styleguide/TypographyPage'
 
-const pages: Record<string, () => React.JSX.Element> = { color: ColorPage, typography: TypographyPage }
+const pages: Record<string, () => React.JSX.Element> = { color: ColorPage, typography: TypographyPage, button: ButtonPage, banner: BannerPage }
 const currentPath = () => window.location.hash.slice(1) || 'color'
 
 function App() {

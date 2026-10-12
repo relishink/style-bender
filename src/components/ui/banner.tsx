@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils"
 // Reworked from shadcn's Alert. Mirrors the Figma "Banner" component set:
 // Type=Info|Success|Warning|Error, an optional description and an optional action.
 const bannerVariants = cva(
-  "flex w-full items-start gap-3 rounded-lg border border-border bg-card px-3 py-2 text-left text-sm",
+  // inset-ring (not border) so the 1px line sits inside the box like a Figma inside stroke: 36px high, same as Figma.
+  "flex w-full items-start gap-3 rounded-lg bg-card px-3 py-2 text-left text-sm inset-ring inset-ring-border",
   {
     variants: {
       variant: {

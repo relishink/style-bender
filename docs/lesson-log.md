@@ -84,3 +84,22 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Lesson**
 - A dark swatch on a light page is just the same CSS variable inside a `.dark` wrapper. That only works because every color is a variable.
+
+## 2026-10-12: Phase 3, components 1:1
+
+**What we did**
+- `figma-map.json` maps Button, Icon Button and Banner to code, with Figma node IDs. The parity check now also compares each component's Figma variant options with the `cva()` variants in code, in both directions. Breaking one mapping on purpose (`xs` → `xxs`) was caught at once.
+- Button: replaced raw Tailwind values (`rounded-[min(...)]`, `text-[0.8rem]`, a `color-mix` hover) with token classes. Measured every size in Figma and in the browser; fixed four drifts (Small text in code; Small/XS gap, XS height and Icon XS size in Figma). All four sizes now match on height, padding, gap, radius and font size.
+- Banner: reworked shadcn Alert into info/success/warning/error. Added status tokens (Tailwind v4) in Git, then Figma variables with code syntax, then turned the Figma Alert into a Banner set with matching variants. Parity: 146 values and 3 component APIs, 1:1.
+- Heading and Text components only accept named text styles.
+- Button and Banner pages with Guidelines, Specifications, Code and Accessibility tabs. Specifications shows the exported Figma render next to the live component, and lists tokens read from the component source. Contrast ratios are computed from the Figma snapshot.
+
+**What broke, and the fix**
+- green-600 and amber-600 fail AA on white (3.2:1). Used the 700 shades in light mode.
+- Swapping an icon instance in Figma kept the old icon's color, and one triangle icon came in at 16×24. Rebound the strokes and resized.
+- The Banner was 38px in code and 36px in Figma: a CSS border adds to the box, a Figma inside stroke does not. Fix: `inset-ring` instead of `border`.
+- Copying base64 PNG data by hand corrupted one image twice. Fix: export in 240-character pieces with a checksum each, and verify the PNG CRCs before saving.
+- oxlint flags JSX in table row arrays as missing keys; the Table component adds keys, so the rule is off for `src/styleguide/`.
+
+**Prompt that worked**
+> Banner colors: use Tailwind v4's. Rendering check: side by side in the docs now, automated pixel diff later.
