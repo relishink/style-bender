@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-12T19:27:50.231Z",
+  "exportedAt": "2026-10-12T19:46:23.463Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -697,6 +697,61 @@
       "fontSize": 12,
       "lineHeight": 16,
       "letterSpacing": 0
+    }
+  },
+  "components": {
+    "1953:29720": {
+      "name": "Button - Nova",
+      "variantCount": 120,
+      "options": {
+        "Size": [
+          "Default",
+          "Small",
+          "Large",
+          "Extra small"
+        ],
+        "Variant": [
+          "Primary",
+          "Secondary",
+          "Outline",
+          "Ghost",
+          "Destructive",
+          "Link"
+        ],
+        "State": [
+          "Default",
+          "Hover & Active",
+          "Focus",
+          "Disabled",
+          "Invalid"
+        ]
+      }
+    },
+    "1953:30428": {
+      "name": "Icon Button - Nova",
+      "variantCount": 100,
+      "options": {
+        "Size": [
+          "Default",
+          "Large",
+          "Small",
+          "Extra small"
+        ],
+        "Variant": [
+          "Primary",
+          "Secondary",
+          "Outline",
+          "Ghost",
+          "Destructive"
+        ],
+        "State": [
+          "Default",
+          "Hover & Active",
+          "Focus",
+          "Disabled",
+          "Invalid"
+        ]
+      }
     }
   }
 }

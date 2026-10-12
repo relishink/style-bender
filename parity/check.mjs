@@ -97,8 +97,44 @@ for (const id of Object.keys(typeTokens).filter((k) => k.startsWith('type.')))
   if (!Object.keys(snapshot.textStyles).some((s) => 'type.' + s.replace('/', ' ').replace(/ /g, '-') === id))
     problems.push(['type', id, 'present', 'missing in Figma'])
 
+// Components: every Figma variant option maps to a code prop value, and every code value maps back
+// (or is listed as codeOnly). Code values are read from the cva() variants in the component file.
+const map = read('../figma-map.json')
+function cvaValues(file, prop) {
+  const src = readFileSync(new URL('../' + file, import.meta.url), 'utf8')
+  const start = src.indexOf('variants: {')
+  const m = new RegExp(`\\n(\\s+)${prop}: \\{`).exec(src.slice(start))
+  if (start < 0 || !m) return null
+  const indent = m[1] + '  '
+  const body = src.slice(start + m.index + m[0].length)
+  const end = body.search(new RegExp(`\\n${m[1]}\\}`))
+  return [...body.slice(0, end).matchAll(new RegExp(`\\n${indent}"?([\\w-]+)"?:`, 'g'))].map((x) => x[1])
+}
+let componentCount = 0
+for (const c of map.components) {
+  const fig = snapshot.components?.[c.figma.nodeId]
+  if (!fig) { problems.push(['component', c.name, c.figma.nodeId, 'not in snapshot: add its nodeId to COMPONENT_SET_IDS']); continue }
+  componentCount++
+  const axes = [...Object.entries(c.props ?? {}).map(([prop, p]) => ({ prop, ...p })), ...(c.states ? [{ prop: null, ...c.states }] : [])]
+  for (const axis of axes) {
+    const figmaOptions = fig.options[axis.figmaProperty] ?? []
+    for (const o of figmaOptions)
+      if (!(o in axis.values)) problems.push(['component', `${c.name} ${axis.figmaProperty}=${o}`, 'no mapping', 'in Figma'])
+    for (const o of Object.keys(axis.values))
+      if (!figmaOptions.includes(o)) problems.push(['component', `${c.name} ${axis.figmaProperty}=${o}`, 'mapped', 'missing in Figma'])
+    if (!axis.prop) continue
+    const codeValues = cvaValues(c.code.file, axis.prop)
+    if (!codeValues) { problems.push(['component', `${c.name}.${axis.prop}`, 'not found in ' + c.code.file, '']); continue }
+    for (const v of Object.values(axis.values))
+      if (!codeValues.includes(v)) problems.push(['component', `${c.name} ${axis.prop}="${v}"`, 'missing in code', 'in Figma'])
+    for (const v of codeValues)
+      if (!Object.values(axis.values).includes(v) && !(axis.codeOnly ?? []).includes(v))
+        problems.push(['component', `${c.name} ${axis.prop}="${v}"`, 'in code', 'missing in Figma'])
+  }
+}
+
 console.log(`Figma snapshot: ${snapshot.exportedAt}`)
-console.log(`Checked ${checked} values (colors and radius in light + dark, ${Object.keys(snapshot.textStyles).length} text styles).`)
+console.log(`Checked ${checked} values (colors and radius in light + dark, ${Object.keys(snapshot.textStyles).length} text styles) and ${componentCount} component APIs.`)
 if (problems.length === 0) {
   console.log('✔ 1:1 — Git tokens and Figma match.')
 } else {

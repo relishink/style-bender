@@ -2,7 +2,11 @@
 // parity/figma-snapshot.json, then run `npm run parity`.
 //
 // Exports every Figma variable that has WEB code syntax (its CSS variable name),
-// resolved to a final value per theme, plus every local text style.
+// resolved to a final value per theme, every local text style, and the variant
+// options of each component set in figma-map.json.
+//
+// Keep this list in sync with the nodeIds in figma-map.json (npm run parity tells you if one is missing).
+const COMPONENT_SET_IDS = ['1953:29720', '1953:30428']
 const hex = (c) =>
   '#' + [c.r, c.g, c.b].map((x) => Math.round(x * 255).toString(16).padStart(2, '0')).join('')
 const collections = await figma.variables.getLocalVariableCollectionsAsync()
@@ -52,4 +56,15 @@ for (const s of await figma.getLocalTextStylesAsync()) {
   }
 }
 
-return { exportedAt: new Date().toISOString(), variables, textStyles }
+const components = {}
+for (const id of COMPONENT_SET_IDS) {
+  const set = await figma.getNodeByIdAsync(id)
+  if (!set || set.type !== 'COMPONENT_SET') { components[id] = null; continue }
+  const options = {}
+  for (const [key, def] of Object.entries(set.componentPropertyDefinitions)) {
+    if (def.type === 'VARIANT') options[key] = def.variantOptions
+  }
+  components[id] = { name: set.name, variantCount: set.children.length, options }
+}
+
+return { exportedAt: new Date().toISOString(), variables, textStyles, components }
