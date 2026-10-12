@@ -8,6 +8,9 @@
       "sources": [
         {
           "$ref": "primitives.tokens.json"
+        },
+        {
+          "$ref": "typography.tokens.json"
         }
       ]
     },

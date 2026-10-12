@@ -8,13 +8,13 @@ A small showcase that proves a 1:1 match between a Figma library and a custom co
 - The coded style guide is the only rendered reference. There is no Storybook or other middle layer: Figma is compared directly with the style guide app.
 
 ## Stack
-Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`), Tailwind v4 reading CSS variables generated from tokens, and a DTCG 2025.10 tokens built with Terrazzo (`terrazzo.config.ts`): `tokens/style-bender.resolver.json` loads primitives, then the light or dark theme.
+Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`), Tailwind v4 reading CSS variables generated from tokens, and DTCG 2025.10 tokens built with Terrazzo (`terrazzo.config.ts`): `tokens/style-bender.resolver.json` loads primitives, then the light or dark theme.
 
 ## Ground rules
 1. **Git is the source of truth.** When Figma and code disagree, stop and show the diff to David.
 2. **Commit straight to `main`.** No branches or PRs unless David asks. Keep commits small, one concern each.
 3. **No hard-coded colors, font sizes or spacing in components.** Everything comes from tokens. No Tailwind arbitrary values such as `bg-[#...]`.
-   - Colors and radius now come from `tokens/` via `src/styles/tokens.css` (generated, never edit by hand). Typography tokens are still to come.
+   - Colors and radius now come from `tokens/` via `src/styles/tokens.css` (generated, never edit by hand). Typography tokens (`type.*`, from the Figma kit's text styles) exist; Heading and Text will use them in Phase 3.
 4. **Show a short plan before each phase and wait for David's OK.**
 5. **After each working session, append to `docs/lesson-log.md`:** what we did, what broke, the fix, and any prompt that worked well.
 
@@ -33,7 +33,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - No Storybook.
 
 ## Layout
-- `tokens/`: DTCG token JSON (design-owned, see CODEOWNERS): `primitives.tokens.json`, `light.tokens.json`, `dark.tokens.json`, and the resolver.
+- `tokens/`: DTCG token JSON (design-owned, see CODEOWNERS): `primitives.tokens.json`, `typography.tokens.json`, `light.tokens.json`, `dark.tokens.json`, and the resolver.
 - `src/styles/tokens.css`: generated CSS variables. Names match shadcn's (`--primary`, `--neutral-500`).
 - `src/components/ui/`: shadcn components.
 - `docs/`: `foundations/`, `components/`, `lesson-log.md`.
