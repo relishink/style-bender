@@ -1,0 +1,133 @@
+{
+  "semantic": {
+    "$description": "Semantic tokens, dark theme. Names match shadcn's CSS variables.",
+    "background": {
+      "$type": "color",
+      "$value": "{primitive.neutral.950}"
+    },
+    "foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "card": {
+      "$type": "color",
+      "$value": "{primitive.neutral.900}"
+    },
+    "card-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "popover": {
+      "$type": "color",
+      "$value": "{primitive.neutral.900}"
+    },
+    "popover-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "primary": {
+      "$type": "color",
+      "$value": "{primitive.neutral.200}"
+    },
+    "primary-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.900}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{primitive.neutral.800}"
+    },
+    "secondary-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{primitive.neutral.800}"
+    },
+    "muted-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.400}"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{primitive.neutral.800}"
+    },
+    "accent-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "destructive": {
+      "$type": "color",
+      "$value": "{primitive.red.400}"
+    },
+    "border": {
+      "$type": "color",
+      "$value": "{primitive.white-alpha.10}"
+    },
+    "input": {
+      "$type": "color",
+      "$value": "{primitive.white-alpha.15}"
+    },
+    "ring": {
+      "$type": "color",
+      "$value": "{primitive.neutral.500}"
+    },
+    "chart-1": {
+      "$type": "color",
+      "$value": "{primitive.neutral.300}"
+    },
+    "chart-2": {
+      "$type": "color",
+      "$value": "{primitive.neutral.500}"
+    },
+    "chart-3": {
+      "$type": "color",
+      "$value": "{primitive.neutral.600}"
+    },
+    "chart-4": {
+      "$type": "color",
+      "$value": "{primitive.neutral.700}"
+    },
+    "chart-5": {
+      "$type": "color",
+      "$value": "{primitive.neutral.800}"
+    },
+    "sidebar": {
+      "$type": "color",
+      "$value": "{primitive.neutral.900}"
+    },
+    "sidebar-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "sidebar-primary": {
+      "$type": "color",
+      "$value": "{primitive.blue.700}"
+    },
+    "sidebar-primary-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "sidebar-accent": {
+      "$type": "color",
+      "$value": "{primitive.neutral.800}"
+    },
+    "sidebar-accent-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.50}"
+    },
+    "sidebar-border": {
+      "$type": "color",
+      "$value": "{primitive.white-alpha.10}"
+    },
+    "sidebar-ring": {
+      "$type": "color",
+      "$value": "{primitive.neutral.500}"
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{primitive.radius.base}"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "style-bender",
+  "version": "2025.10",
+  "resolutionOrder": [
+    {
+      "type": "set",
+      "name": "primitives",
+      "sources": [
+        {
+          "$ref": "primitives.tokens.json"
+        }
+      ]
+    },
+    {
+      "type": "modifier",
+      "name": "theme",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "light.tokens.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "dark.tokens.json"
+          }
+        ]
+      },
+      "default": "light"
+    }
+  ]
+}
