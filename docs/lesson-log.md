@@ -34,3 +34,22 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Lesson**
 - Decide what the "rendered truth" is before adding tooling. `storybook init` is one command, but every extra surface is another place where drift can hide.
+
+## 2026-10-12: Chose a starter kit and inventoried it
+
+**What we did**
+- Picked Obra's free "shadcn/ui kit Community Edition" as the Figma starting point, because it pairs with the shadcn code already in the repo.
+- Inventoried the duplicated file with read-only `use_figma` calls: 9 variable collections, 22 text styles, and "Nova" component sets for Button (6 variants, 4 sizes, 5 states), Icon Button and Alert.
+- Compared the kit's `shadcn colors` variables (light and dark) with `src/index.css`.
+
+**Findings**
+- The kit has a "Nova" style, matching our `base-nova` code. Button height, padding, gap and radius match.
+- Light mode matches except foreground, accent-foreground, primary-foreground and ring.
+- Dark mode differs on about 15 tokens: the kit uses solid neutrals where code uses other steps or white at 10–15% opacity.
+- No Figma variable has code syntax set, so nothing links Figma names to CSS variable names yet.
+
+**What broke, and the fix**
+- The first inventory script returned more than `use_figma`'s 20 KB limit. Fix: return counts and names first, then drill into one collection or page per call.
+
+**Prompt that worked**
+> Inventory the file read-only through use_figma, then show me the differences against the code before changing anything.
