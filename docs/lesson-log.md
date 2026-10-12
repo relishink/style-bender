@@ -71,3 +71,16 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > Apply the changes to Figma; we don't need to update every component. Just showcase the workflow and how the two sides can be 1:1.
+
+## 2026-10-12: Color and Typography pages
+
+**What we did**
+- Built the style guide app shell: Carbon-style navigation (Foundations, Components), and a dark mode toggle that uses our own shadcn Button.
+- The Color page lists every semantic token with light and dark swatches, its CSS variable, its Figma variable and both values. The Typography page renders a specimen for each of the 22 text styles.
+- Both pages import `tokens/*.json` and `parity/figma-snapshot.json` directly, so the docs show exactly what the parity check compares. Nothing is copied by hand.
+
+**Checked in the browser**
+- Heading 1 renders as Geist 500, 40/40 px, -1.5 px tracking: the same as the Figma text style.
+
+**Lesson**
+- A dark swatch on a light page is just the same CSS variable inside a `.dark` wrapper. That only works because every color is a variable.

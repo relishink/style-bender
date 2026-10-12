@@ -36,11 +36,13 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - `tokens/`: DTCG token JSON (design-owned, see CODEOWNERS): `primitives.tokens.json`, `typography.tokens.json`, `light.tokens.json`, `dark.tokens.json`, and the resolver.
 - `src/styles/tokens.css`: generated CSS variables. Names match shadcn's (`--primary`, `--neutral-500`).
 - `src/components/ui/`: shadcn components.
+- `src/styleguide/`: the style guide app (hash routes, Carbon-style Foundations and Components). Pages read `tokens/` and `parity/figma-snapshot.json` directly, never hand-copied values.
+- `parity/`: `figma-snapshot.figma.js` (run read-only via `use_figma`, save output to `figma-snapshot.json`) and `check.mjs` (`npm run parity`).
 - `docs/`: `foundations/`, `components/`, `lesson-log.md`.
 - `figma-map.json`: Figma component to code mapping.
 
 ## Commands
-- `npm run tokens`: rebuild `src/styles/tokens.css` from `tokens/`. `npm run dev`: style guide app. `npm run build` (runs tokens first): typecheck + build. `npm run lint`.
+- `npm run tokens`: rebuild `src/styles/tokens.css` from `tokens/`. `npm run dev`: style guide app. `npm run build` (runs tokens first): typecheck + build. `npm run lint`. `npm run parity`: compare `tokens/` with the saved Figma snapshot.
 
 ## Tools
 - `gh` is at `~/.local/bin/gh`, logged in with a fine-grained token for this repo only. Never touch other repos or orgs.
