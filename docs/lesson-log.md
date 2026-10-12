@@ -53,3 +53,21 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > Inventory the file read-only through use_figma, then show me the differences against the code before changing anything.
+
+## 2026-10-12: Phase 1 tokens, and the first 1:1 proof
+
+**What we did**
+- Chose Terrazzo over Style Dictionary: it is built for DTCG first and validates 2025.10 resolver files, which give us light and dark modes.
+- Wrote shadcn's real theme to `tokens/` (primitives, light, dark) and the kit's 22 text styles as typography tokens. `npm run tokens` generates `src/styles/tokens.css`, which replaced the hard-coded `oklch(...)` values.
+- Updated 31 Figma variables to match Git and gave 53 of them WEB code syntax (`var(--primary)`), so Figma and code share names.
+- Added the parity check: a read-only `use_figma` snapshot (`parity/figma-snapshot.figma.js`) plus `npm run parity`.
+- First run: 5 differences, all from the kit's neutral-400 being Tailwind v3 (#a3a3a3) instead of v4 (#a1a1a1). Fixed in Figma, re-exported, and the check passed: 128 values, 1:1.
+
+**What broke, and the fix**
+- Terrazzo's `variableName` must return the full name including `--`, or aliases come out as `var(neutral-100)`.
+- Tailwind v4 reds are outside sRGB. Terrazzo emits an sRGB fallback plus the exact color under `@media (color-gamut: p3)`. Figma stores sRGB, so the check compares sRGB hex with a tolerance of 1 per channel.
+- The kit's raw palette is Tailwind v3 for some colors. Nobody could see a 2-shade grey difference; the check could.
+- The first snapshot script resolved aliases in the wrong mode. Fix: keep the current mode when an alias stays inside the same collection.
+
+**Prompt that worked**
+> Apply the changes to Figma; we don't need to update every component. Just showcase the workflow and how the two sides can be 1:1.

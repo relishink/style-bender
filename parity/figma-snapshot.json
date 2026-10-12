@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-12T19:23:51.701Z",
+  "exportedAt": "2026-10-12T19:27:50.231Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -94,11 +94,11 @@
     "--neutral-400": {
       "figma": "theme/neutrals/400",
       "light": {
-        "hex": "#a3a3a3",
+        "hex": "#a1a1a1",
         "alpha": 1
       },
       "dark": {
-        "hex": "#a3a3a3",
+        "hex": "#a1a1a1",
         "alpha": 1
       }
     },
@@ -362,7 +362,7 @@
         "alpha": 1
       },
       "dark": {
-        "hex": "#a3a3a3",
+        "hex": "#a1a1a1",
         "alpha": 1
       }
     },
@@ -446,7 +446,7 @@
     "--ring": {
       "figma": "shadcn colors/focus/ring",
       "light": {
-        "hex": "#a3a3a3",
+        "hex": "#a1a1a1",
         "alpha": 1
       },
       "dark": {
@@ -534,7 +534,7 @@
     "--sidebar-ring": {
       "figma": "shadcn colors/sidebar/sidebar ring",
       "light": {
-        "hex": "#a3a3a3",
+        "hex": "#a1a1a1",
         "alpha": 1
       },
       "dark": {
