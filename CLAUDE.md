@@ -25,7 +25,9 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 
 ## Scope
 - Foundations: color tokens (light and dark), typography scale.
-- Components: Button (primary, secondary, tertiary, ghost, danger; 3 sizes), Banner (from shadcn Alert: info, success, warning, error), Heading/Text.
+- Components: Button (shadcn's set: default, secondary, outline, ghost, destructive, link; sizes xs, sm, default, lg), Banner (from shadcn Alert: info, success, warning, error), Heading/Text.
+- Figma starting point: Obra's free "shadcn/ui kit Community Edition", Nova style (matches our `base-nova` code). Figma names map to code as Primary = `default`, Error = `destructive`.
+- Where the kit and shadcn's real theme differ, shadcn's theme (in Git) wins and Figma is updated.
 - Card is a later walkthrough. Do not add it yet.
 - The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
 - No Storybook.
