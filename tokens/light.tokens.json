@@ -61,6 +61,18 @@
       "$type": "color",
       "$value": "{primitive.red.600}"
     },
+    "info": {
+      "$type": "color",
+      "$value": "{primitive.blue.600}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{primitive.green.700}"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{primitive.amber.700}"
+    },
     "border": {
       "$type": "color",
       "$value": "{primitive.neutral.200}"

@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-12T19:46:23.463Z",
+  "exportedAt": "2026-10-12T19:51:05.676Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -541,6 +541,105 @@
         "hex": "#737373",
         "alpha": 1
       }
+    },
+    "--blue-400": {
+      "figma": "tw-raw/blue/400",
+      "light": {
+        "hex": "#51a2ff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#51a2ff",
+        "alpha": 1
+      }
+    },
+    "--blue-600": {
+      "figma": "tw-raw/blue/600",
+      "light": {
+        "hex": "#155dfc",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#155dfc",
+        "alpha": 1
+      }
+    },
+    "--amber-400": {
+      "figma": "tw-raw/amber/400",
+      "light": {
+        "hex": "#ffba00",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffba00",
+        "alpha": 1
+      }
+    },
+    "--amber-700": {
+      "figma": "tw-raw/amber/700",
+      "light": {
+        "hex": "#bb4d00",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#bb4d00",
+        "alpha": 1
+      }
+    },
+    "--green-400": {
+      "figma": "tw-raw/green/400",
+      "light": {
+        "hex": "#05df72",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#05df72",
+        "alpha": 1
+      }
+    },
+    "--green-700": {
+      "figma": "tw-raw/green/700",
+      "light": {
+        "hex": "#008236",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#008236",
+        "alpha": 1
+      }
+    },
+    "--info": {
+      "figma": "shadcn colors/status/info",
+      "light": {
+        "hex": "#155dfc",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#51a2ff",
+        "alpha": 1
+      }
+    },
+    "--success": {
+      "figma": "shadcn colors/status/success",
+      "light": {
+        "hex": "#008236",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#05df72",
+        "alpha": 1
+      }
+    },
+    "--warning": {
+      "figma": "shadcn colors/status/warning",
+      "light": {
+        "hex": "#bb4d00",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffba00",
+        "alpha": 1
+      }
     }
   },
   "textStyles": {
@@ -750,6 +849,18 @@
           "Focus",
           "Disabled",
           "Invalid"
+        ]
+      }
+    },
+    "1953:32858": {
+      "name": "Banner",
+      "variantCount": 4,
+      "options": {
+        "Type": [
+          "Info",
+          "Error",
+          "Success",
+          "Warning"
         ]
       }
     }

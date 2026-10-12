@@ -5,7 +5,11 @@
 :root {
   --accent: var(--neutral-100);
   --accent-foreground: var(--neutral-900);
+  --amber-400: oklch(82.99% 0.1713 81.31);
+  --amber-700: oklch(55.61% 0.1581 45.33);
   --background: var(--neutral-0);
+  --blue-400: oklch(70.4% 0.1584 253.5);
+  --blue-600: oklch(54.6% 0.245 262.88);
   --blue-700: oklch(48.8% 0.243 264.38);
   --border: var(--neutral-200);
   --card: var(--neutral-0);
@@ -22,6 +26,9 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --foreground: var(--neutral-950);
+  --green-400: oklch(79.2% 0.209 151.71);
+  --green-700: oklch(52.97% 0.15 148.9);
+  --info: var(--blue-600);
   --input: var(--neutral-200);
   --muted: var(--neutral-100);
   --muted-foreground: var(--neutral-500);
@@ -56,6 +63,7 @@
   --sidebar-primary: var(--neutral-900);
   --sidebar-primary-foreground: var(--neutral-50);
   --sidebar-ring: var(--neutral-400);
+  --success: var(--green-700);
   --type-caption: var(--type-caption-font-weight) var(--type-caption-font-size)/var(--type-caption-line-height) var(--type-caption-font-family);
   --type-caption-font-family: var(--font-family-sans);
   --type-caption-font-size: 13px;
@@ -188,30 +196,47 @@
   --type-paragraph-small-normal-font-weight: var(--font-weight-regular);
   --type-paragraph-small-normal-letter-spacing: 0px;
   --type-paragraph-small-normal-line-height: 1.4286;
+  --warning: var(--amber-700);
   --white-alpha-10: oklch(100% 0 0 / 0.1);
   --white-alpha-15: oklch(100% 0 0 / 0.15);
 }
 
 @media (color-gamut: p3) {
   :root {
+    --amber-400: oklch(82.8% 0.189 84.43);
+    --amber-700: oklch(55.5% 0.163 49);
+    --blue-400: oklch(70.7% 0.165 254.6);
     --destructive: var(--red-600);
+    --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --success: var(--green-700);
+    --warning: var(--amber-700);
   }
 }
 
 @media (color-gamut: rec2020) {
   :root {
+    --amber-400: oklch(82.8% 0.189 84.43);
+    --amber-700: oklch(55.5% 0.163 49);
+    --blue-400: oklch(70.7% 0.165 254.6);
     --destructive: var(--red-600);
+    --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --success: var(--green-700);
+    --warning: var(--amber-700);
   }
 }
 
 .dark {
   --accent: var(--neutral-800);
   --accent-foreground: var(--neutral-50);
+  --amber-400: oklch(82.99% 0.1713 81.31);
+  --amber-700: oklch(55.61% 0.1581 45.33);
   --background: var(--neutral-950);
+  --blue-400: oklch(70.4% 0.1584 253.5);
+  --blue-600: oklch(54.6% 0.245 262.88);
   --blue-700: oklch(48.8% 0.243 264.38);
   --border: var(--white-alpha-10);
   --card: var(--neutral-900);
@@ -228,6 +253,9 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --foreground: var(--neutral-50);
+  --green-400: oklch(79.2% 0.209 151.71);
+  --green-700: oklch(52.97% 0.15 148.9);
+  --info: var(--blue-400);
   --input: var(--white-alpha-15);
   --muted: var(--neutral-800);
   --muted-foreground: var(--neutral-400);
@@ -262,6 +290,7 @@
   --sidebar-primary: var(--blue-700);
   --sidebar-primary-foreground: var(--neutral-50);
   --sidebar-ring: var(--neutral-500);
+  --success: var(--green-400);
   --type-caption: var(--type-caption-font-weight) var(--type-caption-font-size)/var(--type-caption-line-height) var(--type-caption-font-family);
   --type-caption-font-family: var(--font-family-sans);
   --type-caption-font-size: 13px;
@@ -394,22 +423,35 @@
   --type-paragraph-small-normal-font-weight: var(--font-weight-regular);
   --type-paragraph-small-normal-letter-spacing: 0px;
   --type-paragraph-small-normal-line-height: 1.4286;
+  --warning: var(--amber-400);
   --white-alpha-10: oklch(100% 0 0 / 0.1);
   --white-alpha-15: oklch(100% 0 0 / 0.15);
 }
 
 @media (color-gamut: p3) {
   .dark {
+    --amber-400: oklch(82.8% 0.189 84.43);
+    --amber-700: oklch(55.5% 0.163 49);
+    --blue-400: oklch(70.7% 0.165 254.6);
     --destructive: var(--red-400);
+    --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --success: var(--green-400);
+    --warning: var(--amber-400);
   }
 }
 
 @media (color-gamut: rec2020) {
   .dark {
+    --amber-400: oklch(82.8% 0.189 84.43);
+    --amber-700: oklch(55.5% 0.163 49);
+    --blue-400: oklch(70.7% 0.165 254.6);
     --destructive: var(--red-400);
+    --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --success: var(--green-400);
+    --warning: var(--amber-400);
   }
 }

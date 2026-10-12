@@ -3,43 +3,134 @@
   "components": [
     {
       "name": "Button",
-      "figma": { "componentSet": "Button - Nova", "nodeId": "1953:29720", "page": "Button & Icon Button •" },
-      "code": { "file": "src/components/ui/button.tsx", "export": "Button" },
+      "figma": {
+        "componentSet": "Button - Nova",
+        "nodeId": "1953:29720",
+        "page": "Button & Icon Button •"
+      },
+      "code": {
+        "file": "src/components/ui/button.tsx",
+        "export": "Button"
+      },
       "props": {
         "variant": {
           "figmaProperty": "Variant",
-          "values": { "Primary": "default", "Secondary": "secondary", "Outline": "outline", "Ghost": "ghost", "Destructive": "destructive", "Link": "link" }
+          "values": {
+            "Primary": "default",
+            "Secondary": "secondary",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Destructive": "destructive",
+            "Link": "link"
+          }
         },
         "size": {
           "figmaProperty": "Size",
-          "values": { "Default": "default", "Small": "sm", "Large": "lg", "Extra small": "xs" },
-          "codeOnly": ["icon", "icon-xs", "icon-sm", "icon-lg"]
+          "values": {
+            "Default": "default",
+            "Small": "sm",
+            "Large": "lg",
+            "Extra small": "xs"
+          },
+          "codeOnly": [
+            "icon",
+            "icon-xs",
+            "icon-sm",
+            "icon-lg"
+          ]
         }
       },
       "states": {
         "figmaProperty": "State",
-        "values": { "Default": "rest", "Hover & Active": ":hover, :active", "Focus": ":focus-visible", "Disabled": ":disabled", "Invalid": "[aria-invalid]" }
+        "values": {
+          "Default": "rest",
+          "Hover & Active": ":hover, :active",
+          "Focus": ":focus-visible",
+          "Disabled": ":disabled",
+          "Invalid": "[aria-invalid]"
+        }
       }
     },
     {
       "name": "Icon Button",
-      "figma": { "componentSet": "Icon Button - Nova", "nodeId": "1953:30428", "page": "Button & Icon Button •" },
-      "code": { "file": "src/components/ui/button.tsx", "export": "Button" },
+      "figma": {
+        "componentSet": "Icon Button - Nova",
+        "nodeId": "1953:30428",
+        "page": "Button & Icon Button •"
+      },
+      "code": {
+        "file": "src/components/ui/button.tsx",
+        "export": "Button"
+      },
       "props": {
         "variant": {
           "figmaProperty": "Variant",
-          "values": { "Primary": "default", "Secondary": "secondary", "Outline": "outline", "Ghost": "ghost", "Destructive": "destructive" },
-          "codeOnly": ["link"]
+          "values": {
+            "Primary": "default",
+            "Secondary": "secondary",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Destructive": "destructive"
+          },
+          "codeOnly": [
+            "link"
+          ]
         },
         "size": {
           "figmaProperty": "Size",
-          "values": { "Default": "icon", "Small": "icon-sm", "Large": "icon-lg", "Extra small": "icon-xs" },
-          "codeOnly": ["default", "sm", "lg", "xs"]
+          "values": {
+            "Default": "icon",
+            "Small": "icon-sm",
+            "Large": "icon-lg",
+            "Extra small": "icon-xs"
+          },
+          "codeOnly": [
+            "default",
+            "sm",
+            "lg",
+            "xs"
+          ]
         }
       },
       "states": {
         "figmaProperty": "State",
-        "values": { "Default": "rest", "Hover & Active": ":hover, :active", "Focus": ":focus-visible", "Disabled": ":disabled", "Invalid": "[aria-invalid]" }
+        "values": {
+          "Default": "rest",
+          "Hover & Active": ":hover, :active",
+          "Focus": ":focus-visible",
+          "Disabled": ":disabled",
+          "Invalid": "[aria-invalid]"
+        }
+      }
+    },
+    {
+      "name": "Banner",
+      "figma": {
+        "componentSet": "Banner",
+        "nodeId": "1953:32858",
+        "page": "Alert •"
+      },
+      "code": {
+        "file": "src/components/ui/banner.tsx",
+        "export": "Banner"
+      },
+      "props": {
+        "variant": {
+          "figmaProperty": "Type",
+          "values": {
+            "Info": "info",
+            "Success": "success",
+            "Warning": "warning",
+            "Error": "error"
+          }
+        }
+      },
+      "otherProperties": {
+        "Title (text)": "title",
+        "⮑  Description (text) + Show Description": "description",
+        "Show Button": "action (pass a <Button size=\"xs\" variant=\"outline\">)",
+        "⮑ Icon": "fixed per variant in code (Info, CircleCheck, TriangleAlert, CircleAlert)",
+        "Show Title": "not supported in code: a banner always has a title"
       }
     }
   ]
