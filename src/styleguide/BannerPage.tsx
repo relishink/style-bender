@@ -6,7 +6,7 @@ import { contrast, figmaColor, mappingFor, variantTokens } from './tokens'
 import { text } from './type'
 
 const banner = mappingFor('Banner')!
-const kinds = Object.entries(banner.props.variant.values) // [Figma Type, code value]
+const kinds = Object.entries(banner.props.variant!.values) // [Figma Type, code value]
 const tokens = variantTokens(source, 'variant')
 const usage: Record<string, string> = {
   info: 'Neutral information that helps, such as a tip or a change in the product.',

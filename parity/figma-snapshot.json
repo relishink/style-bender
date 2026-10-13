@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-13T12:28:14.957Z",
+  "exportedAt": "2026-10-13T12:35:58.866Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -964,6 +964,14 @@
           "Disabled",
           "Invalid"
         ]
+      },
+      "size": [
+        57,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
       }
     },
     "1953:30428": {
@@ -990,6 +998,14 @@
           "Disabled",
           "Invalid"
         ]
+      },
+      "size": [
+        32,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
       }
     },
     "1953:32858": {
@@ -1002,6 +1018,27 @@
           "Success",
           "Warning"
         ]
+      },
+      "size": [
+        400,
+        36
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "5021:12383": {
+      "name": "Card - Nova - Confirmation",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        400,
+        260
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
       }
     }
   }

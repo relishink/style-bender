@@ -6,7 +6,7 @@ import { contrast, figmaColor, mappingFor, variantTokens } from './tokens'
 import { text } from './type'
 
 const button = mappingFor('Button')!
-const variants = Object.entries(button.props.variant.values) // [Figma name, code value]
+const variants = Object.entries(button.props.variant!.values) // [Figma name, code value]
 const sizes = Object.entries(button.props.size!.values)
 const tokens = variantTokens(source, 'variant')
 const figmaImage: Record<string, string> = {

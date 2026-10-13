@@ -103,3 +103,21 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > Banner colors: use Tailwind v4's. Rendering check: side by side in the docs now, automated pixel diff later.
+
+## 2026-10-13: Phase 4, the Card walkthrough (steps 2–6)
+
+**What we did**
+- David designed "Card - Nova - Confirmation" in Figma from library parts only. A read-only `use_figma` design review found every value bound to a variable or text style.
+- The review found three things to fix before coding: Figma spacing variables had no link to code, so parity could not see spacing; the body and footer each had a 1px border (a 2px line); the footer had its own 12px radius inside the card's 14px clip. David approved fixes for all three.
+- Spacing is now token-backed: one `spacing` token in Git (0.25rem) becomes Tailwind's `--spacing`, Figma's 28 spacing variables carry `calc(var(--spacing) * n)` code syntax, and parity checks each one (202 values). Setting the base to 0.3rem on purpose produced 56 differences.
+- Tailwind's `text-xs/sm/base/lg` now read the typography tokens, so font sizes in components come from tokens too.
+- `shadcn add card`, restyled to the design: no outer padding, semibold title, solid muted footer, one divider drawn inside the box. Measured in the browser: 400 × 260, header 76, body 120, footer 64, radius 14px. All the same as Figma.
+- Card is in `figma-map.json`, and the parity check now also compares each component's corner radius token with the `rounded-*` class in code.
+
+**What broke, and the fix**
+- A 1px divider drawn as a CSS border adds 1px of height; Figma's inside stroke does not. Fix: an `inset-border-b` utility that draws it as an inset shadow.
+- Copying a 18KB PNG by hand: one of 45 checksummed pieces came back wrong; re-fetching only that piece fixed it.
+- The docs image showed as broken until a reload: the page had requested it before the file existed.
+
+**Prompt that worked**
+> I made a new card component. Add it to style-bender; it's already in Figma. I don't need to capture making it in Figma.

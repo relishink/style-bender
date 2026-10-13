@@ -132,6 +132,24 @@
         "⮑ Icon": "fixed per variant in code (Info, CircleCheck, TriangleAlert, CircleAlert)",
         "Show Title": "not supported in code: a banner always has a title"
       }
+    },
+    {
+      "name": "Card",
+      "figma": {
+        "componentSet": "Card - Nova - Confirmation",
+        "nodeId": "5021:12383",
+        "page": "Card •"
+      },
+      "code": {
+        "file": "src/components/ui/card.tsx",
+        "export": "Card"
+      },
+      "props": {},
+      "parts": {
+        "Header (.Card Section - Nova)": "CardHeader with CardTitle (paragraph/bold) and CardDescription (paragraph small/normal)",
+        "Body": "CardContent",
+        "Footer (.Dialog Footer - Nova, 2 buttons right)": "CardFooter with <Button variant=\"outline\"> and <Button>"
+      }
     }
   ]
 }

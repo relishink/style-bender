@@ -119,11 +119,22 @@ function cvaValues(file, prop) {
   const end = body.search(new RegExp(`\\n${m[1]}\\}`))
   return [...body.slice(0, end).matchAll(new RegExp(`\\n${indent}"?([\\w-]+)"?:`, 'g'))].map((x) => x[1])
 }
+// Corner radius: the first rounded-* class in the component file is its root radius.
+// Tailwind's rounded-lg is var(--radius); rounded-sm/md/xl/... are var(--radius-sm/md/xl/...).
+function codeRadiusToken(file) {
+  const m = /\brounded-(sm|md|lg|xl|2xl|3xl|4xl)\b/.exec(readFileSync(new URL('../' + file, import.meta.url), 'utf8'))
+  return m ? (m[1] === 'lg' ? '--radius' : `--radius-${m[1]}`) : null
+}
 let componentCount = 0
 for (const c of map.components) {
   const fig = snapshot.components?.[c.figma.nodeId]
   if (!fig) { problems.push(['component', c.name, c.figma.nodeId, 'not in snapshot: add its nodeId to COMPONENT_SET_IDS']); continue }
   componentCount++
+  if (fig.radius) {
+    const code = codeRadiusToken(c.code.file)
+    if (!fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', `${fig.radius.px}px, not bound to a variable`])
+    else if (code !== fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', fig.radius.token])
+  }
   const axes = [...Object.entries(c.props ?? {}).map(([prop, p]) => ({ prop, ...p })), ...(c.states ? [{ prop: null, ...c.states }] : [])]
   for (const axis of axes) {
     const figmaOptions = fig.options[axis.figmaProperty] ?? []
