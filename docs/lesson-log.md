@@ -121,3 +121,15 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > I made a new card component. Add it to style-bender; it's already in Figma. I don't need to capture making it in Figma.
+
+## 2026-10-13: Phase 4, steps 7–8 (drift caught, then resolved)
+
+**What happened**
+- David changed the Figma Card's corner radius from radius-xl (14px) to radius-2xl (18px).
+- A fresh snapshot compared fingerprints of all 90 variables and 22 text styles with the saved snapshot (nothing else had changed), then `npm run parity` reported exactly one difference: `Card radius: code --radius-xl, Figma --radius-2xl`.
+- Following rule 1, the diff went to David. He chose to set Figma back to radius-xl. A new snapshot confirmed it, and parity returned to 1:1 without a code change.
+
+**Lesson**
+- The check names the component, the property and both tokens, so the decision is quick: either Git follows the design (change `rounded-xl` to `rounded-2xl`), or the design goes back. Both are valid; the tool makes the drift visible either way.
+- A combined fingerprint of all variables depends on their order. Compare sorted keys, or entry by entry, or you get false alarms.
+- Exporting a fingerprint per entry instead of the full values keeps the Figma response small and still proves nothing else changed.
