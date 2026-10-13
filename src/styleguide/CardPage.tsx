@@ -63,7 +63,7 @@ const specifications = (
       <Table
         head={['Part', 'Figma', 'Code']}
         rows={[
-          ['Card', '400 wide, radius-xl (14px), --card, 1px --border inside stroke', <Mono>w-100 rounded-xl bg-card inset-ring-border</Mono>],
+          ['Card', '400 wide, radius-2xl (18px), --card, 1px --border inside stroke', <Mono>w-100 rounded-2xl bg-card inset-ring-border</Mono>],
           ['Header', '16px padding · title paragraph/bold · description paragraph small, --muted-foreground', <Mono>p-4 · text-base font-semibold · text-sm text-muted-foreground</Mono>],
           ['Body', '16px padding · 8px gap · 1px --border bottom stroke', <Mono>p-4 gap-2 inset-border-b</Mono>],
           ['Footer', '16px padding · 8px gap · --muted · buttons right', <Mono>p-4 gap-2 bg-muted justify-end</Mono>],

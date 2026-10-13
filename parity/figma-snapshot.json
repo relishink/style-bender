@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-13T13:09:56.858Z",
+  "exportedAt": "2026-10-13T17:20:31.236Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -1037,8 +1037,8 @@
         260
       ],
       "radius": {
-        "px": 14,
-        "token": "--radius-xl"
+        "px": 18,
+        "token": "--radius-2xl"
       }
     }
   }

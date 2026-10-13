@@ -133,3 +133,14 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 - The check names the component, the property and both tokens, so the decision is quick: either Git follows the design (change `rounded-xl` to `rounded-2xl`), or the design goes back. Both are valid; the tool makes the drift visible either way.
 - A combined fingerprint of all variables depends on their order. Compare sorted keys, or entry by entry, or you get false alarms.
 - Exporting a fingerprint per entry instead of the full values keeps the Figma response small and still proves nothing else changed.
+
+## 2026-10-13: Phase 4, the other ending (Git follows the design)
+
+**What happened** (recorded on David's side)
+- David set the Figma Card to radius-2xl (18px) again.
+- Fresh snapshot: all 90 variables and 22 text styles unchanged (order-independent fingerprints); parity showed exactly one difference, `Card radius: code --radius-xl, Figma --radius-2xl`.
+- David approved. One line changed in `card.tsx` (`rounded-xl` → `rounded-2xl`), the docs page and the Figma render were updated, and parity went back to 1:1.
+- Measured in the browser: 400 × 260, radius 18px, same as Figma.
+
+**Lesson**
+- From design change to matching code took one approval and a one-line diff, because the check said exactly which token on which component had changed.
