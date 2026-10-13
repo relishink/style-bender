@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-12T19:51:05.676Z",
+  "exportedAt": "2026-10-13T12:28:14.957Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -640,6 +640,146 @@
         "hex": "#ffba00",
         "alpha": 1
       }
+    },
+    "calc(var(--spacing) * 0.5)": {
+      "figma": "3xs",
+      "light": 2,
+      "dark": 2
+    },
+    "calc(var(--spacing) * 1)": {
+      "figma": "2xs",
+      "light": 4,
+      "dark": 4
+    },
+    "calc(var(--spacing) * 2)": {
+      "figma": "xs",
+      "light": 8,
+      "dark": 8
+    },
+    "calc(var(--spacing) * 3)": {
+      "figma": "sm",
+      "light": 12,
+      "dark": 12
+    },
+    "calc(var(--spacing) * 4)": {
+      "figma": "md",
+      "light": 16,
+      "dark": 16
+    },
+    "calc(var(--spacing) * 5)": {
+      "figma": "lg",
+      "light": 20,
+      "dark": 20
+    },
+    "calc(var(--spacing) * 6)": {
+      "figma": "xl",
+      "light": 24,
+      "dark": 24
+    },
+    "calc(var(--spacing) * 8)": {
+      "figma": "2xl",
+      "light": 32,
+      "dark": 32
+    },
+    "calc(var(--spacing) * 10)": {
+      "figma": "3xl",
+      "light": 40,
+      "dark": 40
+    },
+    "calc(var(--spacing) * 12)": {
+      "figma": "4xl",
+      "light": 48,
+      "dark": 48
+    },
+    "calc(var(--spacing) * 16)": {
+      "figma": "5xl",
+      "light": 64,
+      "dark": 64
+    },
+    "calc(var(--spacing) * 20)": {
+      "figma": "6xl",
+      "light": 80,
+      "dark": 80
+    },
+    "calc(var(--spacing) * 24)": {
+      "figma": "7xl",
+      "light": 96,
+      "dark": 96
+    },
+    "calc(var(--spacing) * 28)": {
+      "figma": "8xl",
+      "light": 112,
+      "dark": 112
+    },
+    "calc(var(--spacing) * 32)": {
+      "figma": "9xl",
+      "light": 128,
+      "dark": 128
+    },
+    "calc(var(--spacing) * 36)": {
+      "figma": "10xl",
+      "light": 144,
+      "dark": 144
+    },
+    "calc(var(--spacing) * 0.75)": {
+      "figma": "out-of-scale/0,75",
+      "light": 3,
+      "dark": 3
+    },
+    "calc(var(--spacing) * 1.375)": {
+      "figma": "out-of-scale/1,375",
+      "light": 5.5,
+      "dark": 5.5
+    },
+    "calc(var(--spacing) * 1.5)": {
+      "figma": "out-of-scale/1,5",
+      "light": 6,
+      "dark": 6
+    },
+    "calc(var(--spacing) * 1.75)": {
+      "figma": "out-of-scale/1,75",
+      "light": 7,
+      "dark": 7
+    },
+    "calc(var(--spacing) * 1.875)": {
+      "figma": "out-of-scale/1,875",
+      "light": 7.5,
+      "dark": 7.5
+    },
+    "calc(var(--spacing) * 2.125)": {
+      "figma": "out-of-scale/2,125",
+      "light": 8.5,
+      "dark": 8.5
+    },
+    "calc(var(--spacing) * 2.25)": {
+      "figma": "out-of-scale/2,25",
+      "light": 9,
+      "dark": 9
+    },
+    "calc(var(--spacing) * 2.375)": {
+      "figma": "out-of-scale/2,375",
+      "light": 9.5,
+      "dark": 9.5
+    },
+    "calc(var(--spacing) * 2.5)": {
+      "figma": "out-of-scale/2,5",
+      "light": 10,
+      "dark": 10
+    },
+    "calc(var(--spacing) * 3.5)": {
+      "figma": "out-of-scale/3,5",
+      "light": 14,
+      "dark": 14
+    },
+    "calc(var(--spacing) * 3.875)": {
+      "figma": "out-of-scale/3,875",
+      "light": 15.5,
+      "dark": 15.5
+    },
+    "calc(var(--spacing) * 1.25)": {
+      "figma": "out-of-scale/5",
+      "light": 5,
+      "dark": 5
     }
   },
   "textStyles": {

@@ -63,6 +63,8 @@
   --sidebar-primary: var(--neutral-900);
   --sidebar-primary-foreground: var(--neutral-50);
   --sidebar-ring: var(--neutral-400);
+  /* Tailwind's spacing base. Every spacing class multiplies it (p-4 = 4 x 4px = 16px). Figma spacing variables use calc(var(--spacing) * n) as code syntax. */
+  --spacing: 0.25rem;
   --success: var(--green-700);
   --type-caption: var(--type-caption-font-weight) var(--type-caption-font-size)/var(--type-caption-line-height) var(--type-caption-font-family);
   --type-caption-font-family: var(--font-family-sans);
@@ -290,6 +292,8 @@
   --sidebar-primary: var(--blue-700);
   --sidebar-primary-foreground: var(--neutral-50);
   --sidebar-ring: var(--neutral-500);
+  /* Tailwind's spacing base. Every spacing class multiplies it (p-4 = 4 x 4px = 16px). Figma spacing variables use calc(var(--spacing) * n) as code syntax. */
+  --spacing: 0.25rem;
   --success: var(--green-400);
   --type-caption: var(--type-caption-font-weight) var(--type-caption-font-size)/var(--type-caption-line-height) var(--type-caption-font-family);
   --type-caption-font-family: var(--font-family-sans);

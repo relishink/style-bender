@@ -17,7 +17,8 @@ const files = {
 }
 
 // Code-only tokens with no Figma variable on purpose (Figma stores these as raw values).
-const CODE_ONLY = ['--white-alpha-10', '--white-alpha-15', '--radius-base']
+// --spacing is checked through the Figma spacing variables (calc(var(--spacing) * n)) below.
+const CODE_ONLY = ['--white-alpha-10', '--white-alpha-15', '--radius-base', '--spacing']
 
 // Flatten DTCG groups into { "primitive.neutral.500": token }, inheriting $type.
 function flatten(node, path = [], type, out = {}) {
@@ -70,8 +71,16 @@ for (const theme of ['light', 'dark']) {
     const ok = typeof value === 'number' ? value === figma[theme] : sameColor(value, figma[theme])
     if (!ok) problems.push([theme, name, fmt(value), fmt(figma[theme])])
   }
+  // Spacing: a Figma variable with code syntax calc(var(--spacing) * n) must equal n x --spacing.
+  for (const [name, figma] of Object.entries(snapshot.variables)) {
+    const m = /^calc\(var\(--spacing\) \* ([\d.]+)\)$/.exec(name)
+    if (!m) continue
+    checked++
+    const expected = Math.round(Number(m[1]) * code['--spacing'] * 100) / 100
+    if (expected !== figma[theme]) problems.push([theme, `${figma.figma} (${name})`, `${expected}px`, `${figma[theme]}px`])
+  }
   for (const name of Object.keys(snapshot.variables))
-    if (!(name in code)) problems.push([theme, name, 'missing in code', fmt(snapshot.variables[name][theme])])
+    if (!(name in code) && !name.startsWith('calc(')) problems.push([theme, name, 'missing in code', fmt(snapshot.variables[name][theme])])
 }
 
 // Text styles: Figma "paragraph small/bold" <-> token type.paragraph-small-bold
@@ -134,7 +143,7 @@ for (const c of map.components) {
 }
 
 console.log(`Figma snapshot: ${snapshot.exportedAt}`)
-console.log(`Checked ${checked} values (colors and radius in light + dark, ${Object.keys(snapshot.textStyles).length} text styles) and ${componentCount} component APIs.`)
+console.log(`Checked ${checked} values (colors, radius and spacing in light + dark, ${Object.keys(snapshot.textStyles).length} text styles) and ${componentCount} component APIs.`)
 if (problems.length === 0) {
   console.log('✔ 1:1 — Git tokens and Figma match.')
 } else {

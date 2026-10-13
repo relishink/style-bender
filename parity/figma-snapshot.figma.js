@@ -33,7 +33,9 @@ const variables = {}
 for (const col of collections) {
   for (const id of col.variableIds) {
     const v = await figma.variables.getVariableByIdAsync(id)
-    const css = v.codeSyntax?.WEB?.match(/var\((--[\w-]+)\)/)?.[1]
+    // Plain var(--name) is keyed by the CSS variable; calc(var(--spacing) * n) by the whole expression.
+    const web = v.codeSyntax?.WEB
+    const css = web?.match(/^var\((--[\w-]+)\)$/)?.[1] ?? (web?.startsWith('calc(') ? web : null)
     if (!css) continue
     const entry = { figma: v.name }
     for (const mode of col.modes) {

@@ -277,5 +277,13 @@
         }
       }
     }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "$description": "Tailwind's spacing base. Every spacing class multiplies it (p-4 = 4 x 4px = 16px). Figma spacing variables use calc(var(--spacing) * n) as code syntax.",
+    "$value": {
+      "value": 0.25,
+      "unit": "rem"
+    }
   }
 }
