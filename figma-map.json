@@ -150,6 +150,60 @@
         "Body": "CardContent",
         "Footer (.Dialog Footer - Nova, 2 buttons right)": "CardFooter with <Button variant=\"outline\"> and <Button>"
       }
+    },
+    {
+      "name": "Pagination",
+      "figma": {
+        "componentSet": "Pagination",
+        "nodeId": "1962:14050",
+        "page": "Pagination •"
+      },
+      "code": {
+        "file": "src/components/ui/pagination.tsx",
+        "export": "Pagination"
+      },
+      "props": {},
+      "parts": {
+        "Pages (slot)": "<PaginationContent> with <PaginationItem>s",
+        "Button - Nova, Ghost (Previous / Next)": "<PaginationPrevious> / <PaginationNext>",
+        "Pagination Number Button": "<PaginationLink isActive>",
+        "Pagination Ellipsis": "<PaginationEllipsis>"
+      }
+    },
+    {
+      "name": "Pagination Number Button",
+      "figma": {
+        "componentSet": "Pagination Number Button - Nova",
+        "nodeId": "1953:17986",
+        "page": "Pagination •"
+      },
+      "code": {
+        "file": "src/components/ui/pagination.tsx",
+        "export": "PaginationLink"
+      },
+      "props": {
+        "isActive": {
+          "figmaProperty": "Active",
+          "kind": "boolean",
+          "values": {
+            "On": true,
+            "Off": false
+          }
+        }
+      }
+    },
+    {
+      "name": "Pagination Ellipsis",
+      "figma": {
+        "componentSet": "Pagination Ellipsis",
+        "nodeId": "1957:49237",
+        "page": "Pagination •"
+      },
+      "code": {
+        "file": "src/components/ui/pagination.tsx",
+        "export": "PaginationEllipsis"
+      },
+      "props": {}
     }
   ]
 }

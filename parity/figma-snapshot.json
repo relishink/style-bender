@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-13T17:20:31.236Z",
+  "exportedAt": "2026-10-15T15:13:29.904Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -1039,6 +1039,50 @@
       "radius": {
         "px": 18,
         "token": "--radius-2xl"
+      }
+    },
+    "1962:14050": {
+      "name": "Pagination",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        377,
+        32
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:17986": {
+      "name": "Pagination Number Button - Nova",
+      "variantCount": 2,
+      "options": {
+        "Active": [
+          "On",
+          "Off"
+        ]
+      },
+      "size": [
+        32,
+        32
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1957:49237": {
+      "name": "Pagination Ellipsis",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        32,
+        32
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
       }
     }
   }

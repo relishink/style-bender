@@ -132,7 +132,8 @@ for (const c of map.components) {
   componentCount++
   if (fig.radius) {
     const code = codeRadiusToken(c.code.file)
-    if (!fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', `${fig.radius.px}px, not bound to a variable`])
+    if (!fig.radius.token && fig.radius.px === 0 && !code) { /* square in both: nothing to compare */ }
+    else if (!fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', `${fig.radius.px}px, not bound to a variable`])
     else if (code !== fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', fig.radius.token])
   }
   const axes = [...Object.entries(c.props ?? {}).map(([prop, p]) => ({ prop, ...p })), ...(c.states ? [{ prop: null, ...c.states }] : [])]
@@ -143,6 +144,14 @@ for (const c of map.components) {
     for (const o of Object.keys(axis.values))
       if (!figmaOptions.includes(o)) problems.push(['component', `${c.name} ${axis.figmaProperty}=${o}`, 'mapped', 'missing in Figma'])
     if (!axis.prop) continue
+    // A Figma variant can map to a true/false prop, e.g. Active=On|Off <-> isActive.
+    if (axis.kind === 'boolean') {
+      const src = readFileSync(new URL('../' + c.code.file, import.meta.url), 'utf8')
+      if (!new RegExp(`\\b${axis.prop}\\?:\\s*boolean`).test(src)) problems.push(['component', `${c.name}.${axis.prop}`, 'no boolean prop in ' + c.code.file, 'in Figma'])
+      const vals = Object.values(axis.values)
+      if (!(vals.includes(true) && vals.includes(false))) problems.push(['component', `${c.name}.${axis.prop}`, 'needs one option for true and one for false', ''])
+      continue
+    }
     const codeValues = cvaValues(c.code.file, axis.prop)
     if (!codeValues) { problems.push(['component', `${c.name}.${axis.prop}`, 'not found in ' + c.code.file, '']); continue }
     for (const v of Object.values(axis.values))
