@@ -1234,6 +1234,134 @@
         "Size": "one size in code",
         "State": "same states as Input"
       }
+    },
+    {
+      "name": "Item",
+      "figma": {
+        "componentSet": "Item - Nova",
+        "nodeId": "1999:10197",
+        "page": "Item •"
+      },
+      "code": {
+        "file": "src/components/ui/item.tsx",
+        "export": "Item"
+      },
+      "props": {
+        "variant": {
+          "figmaProperty": "Variant",
+          "values": {
+            "Default": "default",
+            "Outline": "outline",
+            "Muted": "muted"
+          }
+        },
+        "size": {
+          "figmaProperty": "Size",
+          "values": {
+            "Default": "default",
+            "Small": "sm",
+            "Extra Small": "xs"
+          }
+        }
+      },
+      "level": "library",
+      "figmaOnly": {
+        "Interaction": "None = a <div>; Default / Hover = rendered as a link or button (render prop), hover: classes"
+      }
+    },
+    {
+      "name": "Empty",
+      "figma": {
+        "componentSet": "Empty - Nova",
+        "nodeId": "1999:15672",
+        "page": "Empty •"
+      },
+      "code": {
+        "file": "src/components/ui/empty.tsx",
+        "export": "Empty"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Variant": "Default = no border; Outline = className=\"border\"; Outline dashed = \"border border-dashed\"; Background = \"bg-muted\""
+      }
+    },
+    {
+      "name": "Scroll Area",
+      "figma": {
+        "componentSet": "Scrollbar",
+        "nodeId": "1953:14936",
+        "page": "Scroll Area"
+      },
+      "code": {
+        "file": "src/components/ui/scroll-area.tsx",
+        "export": "ScrollBar"
+      },
+      "props": {
+        "orientation": {
+          "figmaProperty": "Type",
+          "kind": "prop",
+          "values": {
+            "Vertical": "vertical",
+            "Horizontal": "horizontal"
+          },
+          "note": "values come from Base UI ScrollArea.Scrollbar.Props (\"vertical\" | \"horizontal\"), not written in our file"
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Resizable",
+      "figma": {
+        "componentSet": "Resizable",
+        "nodeId": "1953:15016",
+        "page": "Resizable"
+      },
+      "code": {
+        "file": "src/components/ui/resizable.tsx",
+        "export": "ResizableHandle"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Orientation": "the handle follows the group: ResizablePanelGroup orientation=\"horizontal\" gives the vertical grip and the other way round; withHandle shows the grip"
+      }
+    },
+    {
+      "name": "Carousel",
+      "figma": {
+        "componentSet": "Carousel (Horizontal) - Nova",
+        "nodeId": "1953:26893",
+        "page": "Carousel •"
+      },
+      "code": {
+        "file": "src/components/ui/carousel.tsx",
+        "export": "Carousel"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Slides": "number of CarouselItem children",
+        "Orientation": "this set is orientation=\"horizontal\""
+      }
+    },
+    {
+      "name": "Carousel (vertical)",
+      "figma": {
+        "componentSet": "Carousel (Vertical) - Nova",
+        "nodeId": "1953:26931",
+        "page": "Carousel •"
+      },
+      "code": {
+        "file": "src/components/ui/carousel.tsx",
+        "export": "Carousel"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Slides": "number of CarouselItem children",
+        "Orientation": "this set is orientation=\"vertical\""
+      }
     }
   ]
 }

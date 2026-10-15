@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T20:10:32.331Z",
+  "exportedAt": "2026-10-15T20:14:35.006Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -2273,6 +2273,129 @@
       "radius": {
         "px": 10,
         "token": "--radius"
+      }
+    },
+    "1999:10197": {
+      "name": "Item - Nova",
+      "variantCount": 27,
+      "options": {
+        "Size": [
+          "Default",
+          "Small",
+          "Extra Small"
+        ],
+        "Variant": [
+          "Default",
+          "Outline",
+          "Muted"
+        ],
+        "Interaction": [
+          "None",
+          "Default",
+          "Hover"
+        ]
+      },
+      "size": [
+        600,
+        64
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1999:15672": {
+      "name": "Empty - Nova",
+      "variantCount": 4,
+      "options": {
+        "Variant": [
+          "Default",
+          "Outline",
+          "Background",
+          "Outline dashed"
+        ]
+      },
+      "size": [
+        480,
+        268
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
+      }
+    },
+    "1953:14936": {
+      "name": "Scrollbar",
+      "variantCount": 2,
+      "options": {
+        "Type": [
+          "Vertical",
+          "Horizontal"
+        ]
+      },
+      "size": [
+        48,
+        6
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:15016": {
+      "name": "Resizable",
+      "variantCount": 2,
+      "options": {
+        "Orientation": [
+          "Horizontal",
+          "Vertical"
+        ]
+      },
+      "size": [
+        12,
+        200
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:26893": {
+      "name": "Carousel (Horizontal) - Nova",
+      "variantCount": 3,
+      "options": {
+        "Slides": [
+          "1 Slide",
+          "2 Slides",
+          "3 Slides"
+        ]
+      },
+      "size": [
+        342,
+        200
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:26931": {
+      "name": "Carousel (Vertical) - Nova",
+      "variantCount": 3,
+      "options": {
+        "Slides": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "size": [
+        400,
+        396
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
       }
     }
   }

@@ -1,16 +1,23 @@
 import { useState } from 'react'
-import { CalendarIcon, SearchIcon } from 'lucide-react'
+import { BadgeCheckIcon, CalendarIcon, ChevronRightIcon, FolderOpenIcon, SearchIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Combobox, ComboboxChip, ComboboxChips, ComboboxChipsInput, ComboboxContent, ComboboxEmpty, ComboboxInput, ComboboxItem, ComboboxList, ComboboxValue, useComboboxAnchor } from '@/components/ui/combobox'
+import { Empty, EmptyContent, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'
 import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSet } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '@/components/ui/input-group'
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/components/ui/input-otp'
+import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle } from '@/components/ui/item'
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/resizable'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Separator } from '@/components/ui/separator'
 import type { LibraryEntry } from './LibraryPage'
+import { text } from '../type'
 
 const row = 'flex flex-wrap items-center gap-4'
 const fruits = ['Apple', 'Banana', 'Blueberry', 'Cherry', 'Grape', 'Mango']
@@ -158,5 +165,92 @@ export const batch4: LibraryEntry[] = [
     code: '<NativeSelect defaultValue="apple">\n  <NativeSelectOption value="apple">Apple</NativeSelectOption>\n  <NativeSelectOption value="banana">Banana</NativeSelectOption>\n</NativeSelect>',
     props: [['size', '"default" | "sm"', 'Size=Default / Small (Select & Combobox - Nova)'], ['aria-invalid', 'boolean', 'State=Error']],
     a11y: ['A real <select>: keyboard, screen readers and mobile pickers all work out of the box.', 'Needs a label like any field.'],
+  },  {
+    path: 'carousel', name: 'Carousel',
+    lead: 'A row of slides with previous and next buttons.',
+    use: ['Use for galleries and optional, browsable content.', 'Never hide important content in later slides: most people only see the first one.'],
+    examples: (
+      <div className="px-12">
+        <Carousel className="w-64">
+          <CarouselContent>
+            {[1, 2, 3, 4, 5].map((n) => <CarouselItem key={n}><div className="flex aspect-square items-center justify-center rounded-xl bg-muted" style={text('heading-2')}>{n}</div></CarouselItem>)}
+          </CarouselContent>
+          <CarouselPrevious /><CarouselNext />
+        </Carousel>
+      </div>
+    ),
+    importLine: 'import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"',
+    code: '<Carousel>\n  <CarouselContent>\n    <CarouselItem>…</CarouselItem>\n    <CarouselItem>…</CarouselItem>\n  </CarouselContent>\n  <CarouselPrevious />\n  <CarouselNext />\n</Carousel>',
+    props: [['orientation', '"horizontal" | "vertical"', 'Carousel (Horizontal) / (Vertical) - Nova'], ['opts', 'Embla options', '—']],
+    a11y: ['Renders role="region" with aria-roledescription="carousel"; each slide is a group.', 'Left and Right arrow keys move between slides; the buttons have labels.'],
+  },
+  {
+    path: 'empty', name: 'Empty',
+    lead: 'What to show when there is nothing to show yet.',
+    use: ['Say what would be here and how to add it.', 'Offer the one action that fixes it.', 'Use the outline or background look inside cards and tables.'],
+    examples: (
+      <Empty className="w-[min(100%,calc(var(--spacing)*120))] border border-dashed">
+        <EmptyHeader>
+          <EmptyMedia variant="icon"><FolderOpenIcon /></EmptyMedia>
+          <EmptyTitle>No projects yet</EmptyTitle>
+          <EmptyDescription>Create your first project to start comparing Figma and code.</EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent><Button>Create project</Button></EmptyContent>
+      </Empty>
+    ),
+    importLine: 'import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "@/components/ui/empty"',
+    code: '<Empty className="border border-dashed">\n  <EmptyHeader>\n    <EmptyMedia variant="icon"><FolderOpenIcon /></EmptyMedia>\n    <EmptyTitle>No projects yet</EmptyTitle>\n  </EmptyHeader>\n  <EmptyContent><Button>Create project</Button></EmptyContent>\n</Empty>',
+    props: [['className border / border-dashed / bg-muted', 'look', 'Variant=Outline / Outline dashed / Background'], ['variant (EmptyMedia)', '"default" | "icon"', '—']],
+    a11y: ['The title is plain text; if the empty state replaces a list, keep the list’s heading so people know where they are.'],
+  },
+  {
+    path: 'item', name: 'Item',
+    lead: 'A row with media, a title, a description and actions.',
+    use: ['Build lists of people, files, settings or notifications.', 'Keep one main action per row; put the rest in a menu.'],
+    examples: (
+      <div className="flex w-96 flex-col gap-4">
+        <Item variant="outline"><ItemContent><ItemTitle>Basic item</ItemTitle><ItemDescription>A title and a short description.</ItemDescription></ItemContent><ItemActions><Button variant="outline" size="sm">Action</Button></ItemActions></Item>
+        <Item variant="muted" size="sm" render={<a href="#item" />}><ItemMedia><BadgeCheckIcon /></ItemMedia><ItemContent><ItemTitle>Your profile is verified</ItemTitle></ItemContent><ItemActions><ChevronRightIcon /></ItemActions></Item>
+      </div>
+    ),
+    importLine: 'import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions } from "@/components/ui/item"',
+    code: '<Item variant="outline">\n  <ItemContent>\n    <ItemTitle>Basic item</ItemTitle>\n    <ItemDescription>A short description.</ItemDescription>\n  </ItemContent>\n  <ItemActions>\n    <Button size="sm">Action</Button>\n  </ItemActions>\n</Item>',
+    props: [['variant', '"default" | "outline" | "muted"', 'Variant=Default / Outline / Muted'], ['size', '"default" | "sm" | "xs"', 'Size=Default / Small / Extra Small'], ['render', 'element', 'Interaction=Default / Hover (a link or button)']],
+    a11y: ['A plain Item is a <div>; render it as a link or button when the whole row is clickable.', 'Do not nest buttons inside a clickable row.'],
+  },
+  {
+    path: 'resizable', name: 'Resizable',
+    lead: 'Panels that people can resize by dragging the handle between them.',
+    use: ['Use in tool-like layouts: editors, mail clients, side-by-side views.', 'Set sensible minimum sizes so panels never collapse to nothing by accident.'],
+    examples: (
+      <ResizablePanelGroup orientation="horizontal" className="max-w-md rounded-lg border border-border" style={{ height: 'calc(var(--spacing) * 48)' }}>
+        <ResizablePanel defaultSize="40%"><div className="flex h-full items-center justify-center">Sidebar</div></ResizablePanel>
+        <ResizableHandle withHandle />
+        <ResizablePanel defaultSize="60%"><div className="flex h-full items-center justify-center">Content</div></ResizablePanel>
+      </ResizablePanelGroup>
+    ),
+    importLine: 'import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable"',
+    code: '<ResizablePanelGroup orientation="horizontal">\n  <ResizablePanel defaultSize="40%">Sidebar</ResizablePanel>\n  <ResizableHandle withHandle />\n  <ResizablePanel defaultSize="60%">Content</ResizablePanel>\n</ResizablePanelGroup>',
+    props: [['orientation (group)', '"horizontal" | "vertical"', 'Orientation (the grip turns with it)'], ['withHandle', 'boolean', 'shows the grip (radius-lg)'], ['defaultSize / minSize', '"40%" or pixels', '—']],
+    a11y: ['The handle is a focusable separator; arrow keys resize, Home and End jump to the limits.'],
+  },
+  {
+    path: 'scroll-area', name: 'Scroll Area',
+    lead: 'A scrolling region with a slim, consistent scrollbar.',
+    use: ['Use for fixed-height lists inside cards, menus and panels.', 'Let the page itself scroll normally; do not wrap whole pages in it.'],
+    examples: (
+      <ScrollArea className="h-48 w-56 rounded-lg border border-border">
+        <div className="p-4">
+          <p className="mb-3" style={text('paragraph-small-medium')}>Tokens</p>
+          {['background', 'foreground', 'primary', 'secondary', 'muted', 'accent', 'destructive', 'border', 'input', 'ring', 'brand', 'brand-accent'].map((t, i) => (
+            <div key={t}>{i > 0 && <Separator className="my-2" />}<span style={text('monospace-small-normal')}>--{t}</span></div>
+          ))}
+        </div>
+      </ScrollArea>
+    ),
+    importLine: 'import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"',
+    code: '<ScrollArea className="h-48 w-56 rounded-lg border">\n  …long content…\n</ScrollArea>',
+    props: [['orientation (ScrollBar)', '"vertical" | "horizontal"', 'Type=Vertical / Horizontal']],
+    a11y: ['The viewport is focusable so keyboard users can scroll it with arrow keys.', 'Give the region a label when its content is not obvious.'],
   },
 ]
