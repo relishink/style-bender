@@ -9,7 +9,8 @@
     "build": "tz build && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "parity": "node parity/check.mjs"
+    "parity": "node parity/check.mjs",
+    "check:tokens": "node scripts/check-tokens.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
