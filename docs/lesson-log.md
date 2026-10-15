@@ -161,3 +161,20 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > Weekly Figma check: we don't need it in practice, but add a slide that shows the capability. Nothing fancy.
+
+## 2026-10-15: Adding Pagination from the Figma kit
+
+**What we did**
+- Read-only review of the kit's Pagination: it is built entirely from components we already match 1:1 (Ghost and Outline Buttons, the ghost Icon Button), with every value bound to a variable.
+- Found one inconsistency in Figma: inactive page numbers were 34px wide for some digits, 32px for others. Fixed in Figma to a 32 × 32 square in both states (David approved).
+- `shadcn add pagination`, restyled to the design: 8px gap, text-only Previous/Next, 32 × 32 numbers, and a disabled state.
+- Parity now understands a Figma variant that maps to a true/false prop (`Active=On|Off` ↔ `isActive`); renaming the prop on purpose was caught. 7 components, 1:1.
+- Pixel diff and docs page added.
+
+**What broke, and the fix**
+- `shadcn add pagination` asked to overwrite our customised `button.tsx`. Answered no (`yes n |`); Button stayed untouched.
+- Fixing the Figma variants did not fix the Pagination's own number buttons: they carried old 34px size overrides. Reset them one by one.
+- The pixel diff failed by 1px: Figma rounds text boxes up to whole pixels ("Previous" is 56.6px in Chrome, 57 in Figma). Sizes may now differ by 1px; real drifts so far were 2px.
+
+**Prompt that worked**
+> Add this Figma component of pagination to our component library. [Figma link]

@@ -30,6 +30,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - Figma starting point: Obra's free "shadcn/ui kit Community Edition", Nova style (matches our `base-nova` code). Figma names map to code as Primary = `default`, Error = `destructive`.
 - Where the kit and shadcn's real theme differ, shadcn's theme (in Git) wins and Figma is updated.
 - Card (`card.tsx`): designed in Figma by David ("Card - Nova - Confirmation", node 5021:12383), brought to code in Phase 4.
+- Pagination (`pagination.tsx`): from the kit's "Pagination" (node 1962:14050), built from our Buttons; number buttons map Figma `Active=On|Off` to `isActive`.
 - The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
 - No Storybook.
 
@@ -52,11 +53,12 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 ## Adding or changing a component (the 1:1 loop)
 1. Change code and/or tokens; run `npm run tokens`.
 2. Update Figma through `use_figma` (bind to variables, never raw values).
-3. Add or update the entry in `figma-map.json`; add its node ID to `COMPONENT_SET_IDS` in `parity/figma-snapshot.figma.js`.
+3. Add or update the entry in `figma-map.json` (a variant can map to a cva prop value, or with `"kind": "boolean"` to a true/false prop); add its node ID to `COMPONENT_SET_IDS` in `parity/figma-snapshot.figma.js`.
+   - `shadcn add` may offer to overwrite our customised `button.tsx`: always answer no.
 4. Re-run the snapshot, save `parity/figma-snapshot.json`, run `npm run parity` until it reports 1:1.
 5. Re-export the Figma renders for the docs page and check sizes in the browser (Figma strokes sit inside the box: use `inset-ring`, not `border`, when height must match).
 
 ## Guardrails
 - Pre-commit hook (`.githooks/pre-commit`, installed by `npm install`): `check:tokens` and `parity` must pass.
 - CI (`.github/workflows/checks.yml`) on every push: build, lint, `check:tokens`, `parity`, `visual`. Diff images are uploaded when the pixel diff fails.
-- Pixel diff: sizes must match exactly; up to 5% of pixels may differ (text anti-aliasing differs between Figma, macOS and Linux).
+- Pixel diff: sizes may differ by at most 1px (Figma rounds text boxes up to whole pixels); up to 5% of pixels may differ (text anti-aliasing differs between Figma, macOS and Linux).

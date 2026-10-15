@@ -6,4 +6,5 @@ export const routes: Route[] = [
   { path: 'button', label: 'Button', section: 'Components', ready: true },
   { path: 'banner', label: 'Banner', section: 'Components', ready: true },
   { path: 'card', label: 'Card', section: 'Components', ready: true },
+  { path: 'pagination', label: 'Pagination', section: 'Components', ready: true },
 ]
