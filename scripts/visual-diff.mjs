@@ -4,15 +4,16 @@
 //   npm run visual   ->  table of mismatched pixels; diff images in parity/visual/
 //
 // Both images are put on white first (Figma exports are transparent outside the shape).
-// Font anti-aliasing differs slightly between Figma and Chrome, so a small mismatch is expected;
-// anything over THRESHOLD fails.
+// Sizes must match exactly. Pixels may differ a little: Figma, Chrome on macOS and Chrome on
+// Linux (CI) each anti-alias text differently. The text-heavy Card measures ~1% on a Mac and
+// ~4% in CI, so THRESHOLD is 5%. Real drift shows up as a size mismatch or far above that.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import pixelmatch from 'pixelmatch'
 import { chromium } from 'playwright'
 import { PNG } from 'pngjs'
 import { createServer } from 'vite'
 
-const THRESHOLD = 0.03 // 3% of pixels may differ
+const THRESHOLD = 0.05 // 5% of pixels may differ
 const OUT = new URL('../parity/visual/', import.meta.url)
 mkdirSync(OUT, { recursive: true })
 
