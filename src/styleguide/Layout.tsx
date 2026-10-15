@@ -9,7 +9,7 @@ export function Layout({ current, children }: { current: string; children: React
     <div className="flex min-h-screen bg-background text-foreground">
       <nav className="w-60 shrink-0 border-r border-border bg-sidebar p-6 text-sidebar-foreground">
         <a href="#color" style={text('heading-4')}>style-bender</a>
-        {(['Foundations', 'Components'] as const).map((section) => (
+        {(['Foundations', 'Components', 'Library'] as const).map((section) => (
           <div key={section} className="mt-8">
             <p className="text-muted-foreground" style={text('caption')}>{section}</p>
             <ul className="mt-2 flex flex-col gap-1">
