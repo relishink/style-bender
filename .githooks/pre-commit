@@ -1,0 +1,5 @@
+#!/bin/sh
+# Refuse commits that break the design system rules. Installed by `npm install` (see "prepare" in package.json).
+echo "pre-commit: checking tokens and Figma parity…"
+npm run --silent check:tokens || { echo "\nCommit blocked: hard-coded values (rule 3)."; exit 1; }
+npm run --silent parity || { echo "\nCommit blocked: Git and the Figma snapshot are not 1:1."; exit 1; }
