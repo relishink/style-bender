@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T19:50:37.014Z",
+  "exportedAt": "2026-10-15T20:10:32.331Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -2069,6 +2069,210 @@
       "radius": {
         "px": 0,
         "token": null
+      }
+    },
+    "1953:20683": {
+      "name": "Vertical Field - Nova",
+      "variantCount": 12,
+      "options": {
+        "Type": [
+          "Select",
+          "Text Value",
+          "Radio",
+          "Textarea",
+          "Checkbox",
+          "Slider"
+        ],
+        "State": [
+          "Default",
+          "Error"
+        ]
+      },
+      "size": [
+        320,
+        61
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:20777": {
+      "name": "Horizontal Field - Nova",
+      "variantCount": 12,
+      "options": {
+        "Type": [
+          "Select",
+          "Text Value",
+          "Radio",
+          "Textarea",
+          "Checkbox",
+          "Slider"
+        ],
+        "State": [
+          "Default",
+          "Error"
+        ]
+      },
+      "size": [
+        320,
+        36
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1999:16048": {
+      "name": "Input OTP - Nova",
+      "variantCount": 84,
+      "options": {
+        "State": [
+          "Empty",
+          "Placeholder",
+          "Value",
+          "Focus",
+          "Error",
+          "Error Focus",
+          "Disabled"
+        ],
+        "Position": [
+          "Left",
+          "Middle",
+          "Right"
+        ],
+        "Size": [
+          "Default",
+          "Large",
+          "Small",
+          "Extra small"
+        ]
+      },
+      "size": [
+        32,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:14105": {
+      "name": "Multi Combobox - Nova",
+      "variantCount": 16,
+      "options": {
+        "State": [
+          "Empty",
+          "Items",
+          "Focus",
+          "Focus Items"
+        ],
+        "Size": [
+          "Default",
+          "Small",
+          "Large",
+          "Extra small"
+        ]
+      },
+      "size": [
+        272,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:14176": {
+      "name": "Multi Combobox Tag",
+      "variantCount": 2,
+      "options": {
+        "State": [
+          "Default",
+          "Hover"
+        ]
+      },
+      "size": [
+        60,
+        20
+      ],
+      "radius": {
+        "px": 6,
+        "token": "--radius-sm"
+      }
+    },
+    "1999:6911": {
+      "name": "Calendar - Nova",
+      "variantCount": 3,
+      "options": {
+        "Months": [
+          "1 Month",
+          "2 Months",
+          "3 Months"
+        ]
+      },
+      "size": [
+        196,
+        259
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "1999:6891": {
+      "name": "Date Picker - Nova",
+      "variantCount": 3,
+      "options": {
+        "State": [
+          "Placeholder",
+          "Value",
+          "Focus"
+        ]
+      },
+      "size": [
+        197,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:18886": {
+      "name": "Input - Nova",
+      "variantCount": 128,
+      "options": {
+        "Position": [
+          "Default",
+          "Left",
+          "Right",
+          "Middle"
+        ],
+        "Size": [
+          "Regular",
+          "Large",
+          "Small",
+          "Extra small"
+        ],
+        "State": [
+          "Empty",
+          "Placeholder",
+          "Value",
+          "Focus",
+          "Error",
+          "Error Focus",
+          "Disabled",
+          "Error Placeholder"
+        ]
+      },
+      "size": [
+        320,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
       }
     }
   }

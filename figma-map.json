@@ -1034,6 +1034,206 @@
       "props": {},
       "level": "brand",
       "skipRadius": "the symbol tile is a path from the Claude Design SVG (rx 15 of 64), not a radius token"
+    },
+    {
+      "name": "Field",
+      "figma": {
+        "componentSet": "Vertical Field - Nova",
+        "nodeId": "1953:20683",
+        "page": "Field •"
+      },
+      "code": {
+        "file": "src/components/ui/field.tsx",
+        "export": "Field"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "the control inside the Field (Input, Select, Textarea, Checkbox, RadioGroup, Slider)",
+        "State": "Error = data-invalid on Field plus aria-invalid on the control, with a FieldError",
+        "Orientation": "this set is orientation=\"vertical\"; Horizontal Field - Nova is orientation=\"horizontal\""
+      },
+      "skipRadius": "a Field has no corners of its own; the rounded shape is the control inside it, checked as Input"
+    },
+    {
+      "name": "Field (horizontal)",
+      "figma": {
+        "componentSet": "Horizontal Field - Nova",
+        "nodeId": "1953:20777",
+        "page": "Field •"
+      },
+      "code": {
+        "file": "src/components/ui/field.tsx",
+        "export": "Field"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "the control inside the Field",
+        "State": "Error = data-invalid on Field",
+        "Orientation": "orientation=\"horizontal\" (code also has \"responsive\")"
+      },
+      "skipRadius": "a Field has no corners of its own; the rounded shape is the control inside it, checked as Input"
+    },
+    {
+      "name": "Input OTP",
+      "figma": {
+        "componentSet": "Input OTP - Nova",
+        "nodeId": "1999:16048",
+        "page": "Input OTP •"
+      },
+      "code": {
+        "file": "src/components/ui/input-otp.tsx",
+        "export": "InputOTPSlot"
+      },
+      "props": {},
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Empty": "rest",
+          "Placeholder": "rest (placeholder)",
+          "Value": "filled",
+          "Focus": "data-active",
+          "Error": "aria-invalid",
+          "Error Focus": "aria-invalid + data-active",
+          "Disabled": ":disabled"
+        }
+      },
+      "figmaOnly": {
+        "Position": "first / middle / last slot in an InputOTPGroup (outer corners rounded)",
+        "Size": "h-* / w-* classes on the slots; code has one size (Default)"
+      }
+    },
+    {
+      "name": "Combobox",
+      "figma": {
+        "componentSet": "Multi Combobox - Nova",
+        "nodeId": "1953:14105",
+        "page": "Select & Combobox •"
+      },
+      "code": {
+        "file": "src/components/ui/combobox.tsx",
+        "export": "ComboboxChips"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "State": "Empty / Items = chips present; Focus = focus-within ring",
+        "Size": "one size in code (Default)"
+      },
+      "$note": "Single-value Combobox shares the Select & Combobox - Nova set with Select"
+    },
+    {
+      "name": "Combobox Chip",
+      "figma": {
+        "componentSet": "Multi Combobox Tag",
+        "nodeId": "1953:14176",
+        "page": "Select & Combobox •"
+      },
+      "code": {
+        "file": "src/components/ui/combobox.tsx",
+        "export": "ComboboxChip"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "State": "Hover = hover: classes"
+      },
+      "codeRadius": {
+        "token": "--radius-sm",
+        "from": "rounded-sm"
+      }
+    },
+    {
+      "name": "Native Select",
+      "figma": {
+        "componentSet": "Select & Combobox - Nova",
+        "nodeId": "1953:13582",
+        "page": "Select & Combobox •"
+      },
+      "code": {
+        "file": "src/components/ui/native-select.tsx",
+        "export": "NativeSelect"
+      },
+      "props": {
+        "size": {
+          "figmaProperty": "Size",
+          "kind": "prop",
+          "checkValues": true,
+          "values": {
+            "Default": "default",
+            "Small": "sm"
+          },
+          "figmaOnlyValues": [
+            "Large",
+            "Extra small"
+          ]
+        }
+      },
+      "level": "library",
+      "figmaOnly": {
+        "note": "the kit has no native select; it looks like the Select trigger",
+        "State": "browser states: :focus-visible, aria-invalid, :disabled"
+      }
+    },
+    {
+      "name": "Calendar",
+      "figma": {
+        "componentSet": "Calendar - Nova",
+        "nodeId": "1999:6911",
+        "page": "Date Picker & Calendar •"
+      },
+      "code": {
+        "file": "src/components/ui/calendar.tsx",
+        "export": "Calendar"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Months": "numberOfMonths={1|2|3}"
+      },
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "[--cell-radius:var(--radius-md)]"
+      }
+    },
+    {
+      "name": "Date Picker",
+      "figma": {
+        "componentSet": "Date Picker - Nova",
+        "nodeId": "1999:6891",
+        "page": "Date Picker & Calendar •"
+      },
+      "code": {
+        "file": "src/components/ui/calendar.tsx",
+        "export": "Calendar"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "State": "Placeholder / Value / Focus of the trigger Button; a pattern of Popover + Button + Calendar, no own file"
+      },
+      "skipRadius": "a composition: the trigger is an outline Button, already checked as Button"
+    },
+    {
+      "name": "Input Group",
+      "figma": {
+        "componentSet": "Input - Nova",
+        "nodeId": "1953:18886",
+        "page": "Input & Input Group •"
+      },
+      "code": {
+        "file": "src/components/ui/input-group.tsx",
+        "export": "InputGroup"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Position": "Left / Middle / Right = an Input inside a group with addons",
+        "Size": "one size in code",
+        "State": "same states as Input"
+      }
     }
   ]
 }

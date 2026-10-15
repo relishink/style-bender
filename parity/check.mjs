@@ -133,7 +133,15 @@ for (const c of map.components) {
   if (!fig) { problems.push(['component', c.name, c.figma.nodeId, 'not in snapshot: add its nodeId to COMPONENT_SET_IDS']); continue }
   componentCount++
   if (fig.radius && !c.skipRadius) {
-    const code = codeRadiusToken(c.code.file)
+    // codeRadius: when the radius is not the file's first rounded-* class (a CSS variable such as
+    // --cell-radius, or a sub-part like ComboboxChip), the map names the token and the exact code
+    // that sets it, and the check makes sure that code is still in the file.
+    let code = codeRadiusToken(c.code.file)
+    if (c.codeRadius) {
+      code = c.codeRadius.token
+      if (!readFileSync(new URL('../' + c.code.file, import.meta.url), 'utf8').includes(c.codeRadius.from))
+        problems.push(['component', `${c.name} radius`, `"${c.codeRadius.from}" not found in ${c.code.file}`, fig.radius.token ?? `${fig.radius.px}px`])
+    }
     if (!fig.radius.token && fig.radius.px === 0 && !code) { /* square in both: nothing to compare */ }
     else if (!fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', `${fig.radius.px}px, not bound to a variable`])
     else if (code !== fig.radius.token) problems.push(['component', `${c.name} radius`, code ?? 'none', fig.radius.token])

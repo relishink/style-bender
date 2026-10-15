@@ -6,7 +6,9 @@
 // options of each component set in figma-map.json.
 //
 // Keep this list in sync with the nodeIds in figma-map.json (npm run parity tells you if one is missing).
-const COMPONENT_SET_IDS = ['1953:29720',  '1953:30428',  '1953:32858',  '5021:12383',  '1962:14050',  '1953:17986',  '1957:49237',  '5064:12273',  '1953:31170',  '1953:18500',  '1953:14894',  '1957:49264',  '1953:14612',  '2255:18110',  '1953:32067',  '1953:17809',  '1953:26531',  '1953:13000',  '1953:15087',  '1953:11724',  '1953:33091',  '1953:31310',  '1962:13741',  '1953:27724',  '1953:13582',  '1953:14453',  '1953:12862',  '1953:12386',  '1999:10837',  '1953:11601',  '1953:22846',  '1953:32398',  '1953:14738',  '1962:14345',  '1962:14383',  '1953:21264',  '2047:14217',  '2078:525',  '1999:15000',  '2047:14542',  '5083:22',  '5083:23']
+const COMPONENT_SET_IDS = ['1953:29720',  '1953:30428',  '1953:32858',  '5021:12383',  '1962:14050',  '1953:17986',  '1957:49237',  '5064:12273',  '1953:31170',  '1953:18500',  '1953:14894',  '1957:49264',  '1953:14612',  '2255:18110',  '1953:32067',  '1953:17809',  '1953:26531',  '1953:13000',  '1953:15087',  '1953:11724',  '1953:33091',  '1953:31310',  '1962:13741',  '1953:27724',  '1953:13582',  '1953:14453',  '1953:12862',  '1953:12386',  '1999:10837',  '1953:11601',  '1953:22846',  '1953:32398',  '1953:14738',  '1962:14345',  '1962:14383',  '1953:21264',  '2047:14217',  '2078:525',  '1999:15000',  '2047:14542',  '5083:22',  '5083:23',  '1953:20683',  '1953:20777',  '1999:16048',  '1953:14105',  '1953:14176',  '1999:6911',  '1999:6891',  '1953:18886']
+// Where the first rounded shape is not the one that carries the component's radius, name the part to read.
+const RADIUS_FROM = { '1999:6911': '.Calendar / Day - Nova' }
 const hex = (c) =>
   '#' + [c.r, c.g, c.b].map((x) => Math.round(x * 255).toString(16).padStart(2, '0')).join('')
 const collections = await figma.variables.getLocalVariableCollectionsAsync()
@@ -71,7 +73,8 @@ for (const id of COMPONENT_SET_IDS) {
   // The visible shape can be a child (a wrapper frame around a track, a circle, a placeholder bar):
   // use the root if it is rounded, else the first rounded or elliptical node inside it.
   const rounded = (n) => n.type === 'ELLIPSE' || (typeof n.topLeftRadius === 'number' && n.topLeftRadius > 0)
-  const shape = rounded(base) ? base : (base.findOne?.(rounded) ?? base)
+  const hint = RADIUS_FROM[id] && base.findOne?.((n) => n.name === RADIUS_FROM[id])
+  const shape = hint ?? (rounded(base) ? base : (base.findOne?.(rounded) ?? base))
   const radiusVar = shape.boundVariables?.topLeftRadius && (await figma.variables.getVariableByIdAsync(shape.boundVariables.topLeftRadius.id))
   const radius = shape.type === 'ELLIPSE'
     ? { px: 999, token: '--radius-full', ellipse: true }
