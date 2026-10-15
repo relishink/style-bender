@@ -231,6 +231,320 @@
         "Placeholder (text)": "placeholder"
       },
       "origin": "Generated in Figma from code (code first)."
+    },
+    {
+      "name": "Badge",
+      "figma": {
+        "componentSet": "Badge",
+        "nodeId": "1953:31170",
+        "page": "Badge"
+      },
+      "code": {
+        "file": "src/components/ui/badge.tsx",
+        "export": "Badge"
+      },
+      "props": {
+        "variant": {
+          "figmaProperty": "Variant",
+          "values": {
+            "Primary": "default",
+            "Secondary": "secondary",
+            "Outline": "outline",
+            "Ghost": "ghost",
+            "Destructive": "destructive"
+          },
+          "codeOnly": [
+            "link"
+          ]
+        }
+      },
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Focus": ":focus-visible"
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Label",
+      "figma": {
+        "componentSet": "Label",
+        "nodeId": "1953:18500",
+        "page": "Label"
+      },
+      "code": {
+        "file": "src/components/ui/label.tsx",
+        "export": "Label"
+      },
+      "props": {},
+      "figmaOnly": {
+        "Layout": "layout of the surrounding form",
+        "State": "Error = text-destructive on the label",
+        "Weight": "font-medium / font-normal class"
+      },
+      "level": "library"
+    },
+    {
+      "name": "Separator",
+      "figma": {
+        "componentSet": "Separator",
+        "nodeId": "1953:14894",
+        "page": "Separator"
+      },
+      "code": {
+        "file": "src/components/ui/separator.tsx",
+        "export": "Separator"
+      },
+      "props": {
+        "orientation": {
+          "figmaProperty": "Direction",
+          "kind": "prop",
+          "values": {
+            "Default": "horizontal",
+            "Vertical": "vertical"
+          }
+        }
+      },
+      "figmaOnly": {
+        "Spacing": "margin from the surrounding layout"
+      },
+      "level": "library"
+    },
+    {
+      "name": "Skeleton",
+      "figma": {
+        "componentSet": "Skeleton / Placeholder Line",
+        "nodeId": "1957:49264",
+        "page": "Skeleton"
+      },
+      "code": {
+        "file": "src/components/ui/skeleton.tsx",
+        "export": "Skeleton"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Spinner",
+      "figma": {
+        "componentSet": "Spinner",
+        "nodeId": "1953:14612",
+        "page": "Spinner"
+      },
+      "code": {
+        "file": "src/components/ui/spinner.tsx",
+        "export": "Spinner"
+      },
+      "props": {},
+      "figmaOnly": {
+        "Type": "Mirrored is a rotated copy",
+        "Size": "size-3 / size-4 class"
+      },
+      "level": "library"
+    },
+    {
+      "name": "Kbd",
+      "figma": {
+        "componentSet": "kbd - Nova",
+        "nodeId": "2255:18110",
+        "page": "Kbd •"
+      },
+      "code": {
+        "file": "src/components/ui/kbd.tsx",
+        "export": "Kbd"
+      },
+      "props": {},
+      "figmaOnly": {
+        "Style": "Alt = inside a tooltip (in-data-[slot=tooltip-content])"
+      },
+      "level": "library"
+    },
+    {
+      "name": "Avatar",
+      "figma": {
+        "componentSet": "Avatar Placeholder",
+        "nodeId": "1953:32067",
+        "page": "Avatar"
+      },
+      "code": {
+        "file": "src/components/ui/avatar.tsx",
+        "export": "Avatar"
+      },
+      "props": {
+        "size": {
+          "figmaProperty": "Size",
+          "kind": "prop",
+          "checkValues": true,
+          "values": {
+            "Default": "default",
+            "Small": "sm",
+            "Large": "lg"
+          }
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Progress",
+      "figma": {
+        "componentSet": "Progress - Nova",
+        "nodeId": "1953:17809",
+        "page": "Progress •"
+      },
+      "code": {
+        "file": "src/components/ui/progress.tsx",
+        "export": "Progress"
+      },
+      "props": {
+        "value": {
+          "figmaProperty": "Progress",
+          "kind": "prop",
+          "values": {
+            "0": 0,
+            "10": 10,
+            "20": 20,
+            "25": 25,
+            "33": 33,
+            "40": 40,
+            "50": 50,
+            "60": 60,
+            "66": 66,
+            "75": 75,
+            "80": 80,
+            "90": 90,
+            "100": 100
+          }
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Checkbox",
+      "figma": {
+        "componentSet": "Checkbox - Nova",
+        "nodeId": "1953:26531",
+        "page": "Checkbox •"
+      },
+      "code": {
+        "file": "src/components/ui/checkbox.tsx",
+        "export": "Checkbox"
+      },
+      "props": {
+        "checked": {
+          "figmaProperty": "Checked?",
+          "kind": "prop",
+          "values": {
+            "False": false,
+            "True": true,
+            "Indeterminate": "indeterminate"
+          }
+        }
+      },
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Focus": ":focus-visible",
+          "Error Focus": "[aria-invalid]:focus-visible",
+          "Disabled": ":disabled"
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Switch",
+      "figma": {
+        "componentSet": "Switch - Nova",
+        "nodeId": "1953:13000",
+        "page": "Switch •"
+      },
+      "code": {
+        "file": "src/components/ui/switch.tsx",
+        "export": "Switch"
+      },
+      "props": {
+        "size": {
+          "figmaProperty": "Size",
+          "kind": "prop",
+          "checkValues": true,
+          "values": {
+            "Default": "default",
+            "Small": "sm"
+          }
+        }
+      },
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Unchecked": "rest",
+          "Unchecked focus": ":focus-visible",
+          "Checked": "[data-checked]",
+          "Checked focus": "[data-checked]:focus-visible",
+          "Unchecked disabled": ":disabled",
+          "Checked disabled": "[data-checked]:disabled"
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Radio",
+      "figma": {
+        "componentSet": "Radio - Nova",
+        "nodeId": "1953:15087",
+        "page": "Radio •"
+      },
+      "code": {
+        "file": "src/components/ui/radio-group.tsx",
+        "export": "RadioGroupItem"
+      },
+      "props": {
+        "checked": {
+          "figmaProperty": "Checked?",
+          "kind": "prop",
+          "values": {
+            "False": "",
+            "True": "data-checked"
+          }
+        }
+      },
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Focus": ":focus-visible",
+          "Error Focus": "[aria-invalid]:focus-visible",
+          "Disabled": ":disabled"
+        }
+      },
+      "level": "library"
+    },
+    {
+      "name": "Textarea",
+      "figma": {
+        "componentSet": "Textarea - Nova",
+        "nodeId": "1953:11724",
+        "page": "Textarea •"
+      },
+      "code": {
+        "file": "src/components/ui/textarea.tsx",
+        "export": "Textarea"
+      },
+      "props": {},
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Empty": "rest",
+          "Placeholder": "rest (placeholder)",
+          "Value": "rest (value)",
+          "Focus": ":focus-visible",
+          "Error": "[aria-invalid]",
+          "Error Focus": "[aria-invalid]:focus-visible",
+          "Disabled": ":disabled"
+        }
+      },
+      "level": "library"
     }
   ]
 }

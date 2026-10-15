@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T16:50:49.668Z",
+  "exportedAt": "2026-10-15T17:40:33.298Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -846,6 +846,16 @@
         "hex": "#737373",
         "alpha": 0.5
       }
+    },
+    "--radius-full": {
+      "figma": "radius-full",
+      "light": 999,
+      "dark": 999
+    },
+    "--radius-xs": {
+      "figma": "out-of-scale/4",
+      "light": 4,
+      "dark": 4
     }
   },
   "textStyles": {
@@ -1170,6 +1180,280 @@
       "radius": {
         "px": 10,
         "token": "--radius"
+      }
+    },
+    "1953:31170": {
+      "name": "Badge",
+      "variantCount": 10,
+      "options": {
+        "Variant": [
+          "Primary",
+          "Secondary",
+          "Outline",
+          "Ghost",
+          "Destructive"
+        ],
+        "State": [
+          "Default",
+          "Focus"
+        ]
+      },
+      "size": [
+        48,
+        20
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:18500": {
+      "name": "Label",
+      "variantCount": 8,
+      "options": {
+        "Layout": [
+          "Inline",
+          "Block"
+        ],
+        "State": [
+          "Default",
+          "Error"
+        ],
+        "Weight": [
+          "Medium",
+          "Normal"
+        ]
+      },
+      "size": [
+        37,
+        20
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:14894": {
+      "name": "Separator",
+      "variantCount": 6,
+      "options": {
+        "Spacing": [
+          "Regular",
+          "None",
+          "Spacious"
+        ],
+        "Direction": [
+          "Default",
+          "Vertical"
+        ]
+      },
+      "size": [
+        48,
+        1
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:14612": {
+      "name": "Spinner",
+      "variantCount": 4,
+      "options": {
+        "Type": [
+          "Default",
+          "Mirrored"
+        ],
+        "Size": [
+          "Default",
+          "Small"
+        ]
+      },
+      "size": [
+        16,
+        16
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "2255:18110": {
+      "name": "kbd - Nova",
+      "variantCount": 2,
+      "options": {
+        "Style": [
+          "Default",
+          "Alt"
+        ]
+      },
+      "size": [
+        16,
+        20
+      ],
+      "radius": {
+        "px": 6,
+        "token": "--radius-sm"
+      }
+    },
+    "1953:32067": {
+      "name": "Avatar Placeholder",
+      "variantCount": 3,
+      "options": {
+        "Size": [
+          "Default",
+          "Small",
+          "Large"
+        ]
+      },
+      "size": [
+        32,
+        32
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:17809": {
+      "name": "Progress - Nova",
+      "variantCount": 13,
+      "options": {
+        "Progress": [
+          "0",
+          "10",
+          "20",
+          "25",
+          "33",
+          "40",
+          "50",
+          "60",
+          "66",
+          "75",
+          "80",
+          "90",
+          "100"
+        ]
+      },
+      "size": [
+        342,
+        8
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:26531": {
+      "name": "Checkbox - Nova",
+      "variantCount": 11,
+      "options": {
+        "Checked?": [
+          "False",
+          "True",
+          "Indeterminate"
+        ],
+        "State": [
+          "Default",
+          "Focus",
+          "Error Focus",
+          "Disabled"
+        ]
+      },
+      "size": [
+        16,
+        16
+      ],
+      "radius": {
+        "px": 4,
+        "token": "--radius-xs"
+      }
+    },
+    "1953:13000": {
+      "name": "Switch - Nova",
+      "variantCount": 12,
+      "options": {
+        "Size": [
+          "Default",
+          "Small"
+        ],
+        "State": [
+          "Unchecked focus",
+          "Unchecked",
+          "Checked focus",
+          "Checked",
+          "Unchecked disabled",
+          "Checked disabled"
+        ]
+      },
+      "size": [
+        32,
+        18
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:15087": {
+      "name": "Radio - Nova",
+      "variantCount": 8,
+      "options": {
+        "Checked?": [
+          "False",
+          "True"
+        ],
+        "State": [
+          "Default",
+          "Focus",
+          "Error Focus",
+          "Disabled"
+        ]
+      },
+      "size": [
+        16,
+        16
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full",
+        "ellipse": true
+      }
+    },
+    "1953:11724": {
+      "name": "Textarea - Nova",
+      "variantCount": 7,
+      "options": {
+        "State": [
+          "Empty",
+          "Placeholder",
+          "Value",
+          "Focus",
+          "Error",
+          "Error Focus",
+          "Disabled"
+        ]
+      },
+      "size": [
+        320,
+        76
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1957:49264": {
+      "name": "Skeleton / Placeholder Line",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        260,
+        16
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
       }
     }
   }

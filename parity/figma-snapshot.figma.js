@@ -6,7 +6,7 @@
 // options of each component set in figma-map.json.
 //
 // Keep this list in sync with the nodeIds in figma-map.json (npm run parity tells you if one is missing).
-const COMPONENT_SET_IDS = ['1953:29720', '1953:30428', '1953:32858', '5021:12383', '1962:14050', '1953:17986', '1957:49237', '5064:12273']
+const COMPONENT_SET_IDS = ['1953:29720',  '1953:30428',  '1953:32858',  '5021:12383',  '1962:14050',  '1953:17986',  '1957:49237',  '5064:12273',  '1953:31170',  '1953:18500',  '1953:14894',  '1957:49264',  '1953:14612',  '2255:18110',  '1953:32067',  '1953:17809',  '1953:26531',  '1953:13000',  '1953:15087',  '1953:11724']
 const hex = (c) =>
   '#' + [c.r, c.g, c.b].map((x) => Math.round(x * 255).toString(16).padStart(2, '0')).join('')
 const collections = await figma.variables.getLocalVariableCollectionsAsync()
@@ -68,8 +68,14 @@ for (const id of COMPONENT_SET_IDS) {
   }
   // Size and corner radius of the default variant (or the single component), for the spec check.
   const base = set.type === 'COMPONENT_SET' ? set.defaultVariant : set
-  const radiusVar = base.boundVariables?.topLeftRadius && (await figma.variables.getVariableByIdAsync(base.boundVariables.topLeftRadius.id))
-  const radius = { px: base.topLeftRadius, token: radiusVar?.codeSyntax?.WEB?.match(/var\((--[\w-]+)\)/)?.[1] ?? null }
+  // The visible shape can be a child (a wrapper frame around a track, a circle, a placeholder bar):
+  // use the root if it is rounded, else the first rounded or elliptical node inside it.
+  const rounded = (n) => n.type === 'ELLIPSE' || (typeof n.topLeftRadius === 'number' && n.topLeftRadius > 0)
+  const shape = rounded(base) ? base : (base.findOne?.(rounded) ?? base)
+  const radiusVar = shape.boundVariables?.topLeftRadius && (await figma.variables.getVariableByIdAsync(shape.boundVariables.topLeftRadius.id))
+  const radius = shape.type === 'ELLIPSE'
+    ? { px: 999, token: '--radius-full', ellipse: true }
+    : { px: shape.topLeftRadius, token: radiusVar?.codeSyntax?.WEB?.match(/var\((--[\w-]+)\)/)?.[1] ?? null }
   components[id] = { name: set.name, variantCount: set.type === 'COMPONENT_SET' ? set.children.length : 1, options, size: [base.width, base.height], radius }
 }
 

@@ -62,6 +62,8 @@ for (const theme of ['light', 'dark']) {
     if (t.$type === 'dimension') code[cssName(id)] = px(resolve(tokens, t.$value))
   }
   for (const [name, k] of Object.entries(radiusSteps)) code[name] = Math.round(code['--radius'] * k * 100) / 100
+  // Tailwind's rounded-full is a pill (calc(infinity * 1px)); Figma's radius-full is 999px. Same shape.
+  code['--radius-full'] = 999
 
   for (const [name, value] of Object.entries(code)) {
     if (CODE_ONLY.includes(name)) continue
@@ -122,7 +124,7 @@ function cvaValues(file, prop) {
 // Corner radius: the first rounded-* class in the component file is its root radius.
 // Tailwind's rounded-lg is var(--radius); rounded-sm/md/xl/... are var(--radius-sm/md/xl/...).
 function codeRadiusToken(file) {
-  const m = /\brounded-(sm|md|lg|xl|2xl|3xl|4xl)\b/.exec(readFileSync(new URL('../' + file, import.meta.url), 'utf8'))
+  const m = /\brounded-(xs|sm|md|lg|xl|2xl|3xl|4xl|full)\b/.exec(readFileSync(new URL('../' + file, import.meta.url), 'utf8'))
   return m ? (m[1] === 'lg' ? '--radius' : `--radius-${m[1]}`) : null
 }
 let componentCount = 0
@@ -144,6 +146,14 @@ for (const c of map.components) {
     for (const o of Object.keys(axis.values))
       if (!figmaOptions.includes(o)) problems.push(['component', `${c.name} ${axis.figmaProperty}=${o}`, 'mapped', 'missing in Figma'])
     if (!axis.prop) continue
+    // A Figma variant can map to a plain prop (size, orientation, value...): the prop must exist in the
+    // component file, and with checkValues each mapped value must appear there as a string.
+    if (axis.kind === 'prop') {
+      const src = readFileSync(new URL('../' + c.code.file, import.meta.url), 'utf8')
+      if (!new RegExp(`\\b${axis.prop}\\b`).test(src)) problems.push(['component', `${c.name}.${axis.prop}`, 'no such prop in ' + c.code.file, 'in Figma'])
+      if (axis.checkValues) for (const v of Object.values(axis.values)) if (!src.includes(`"${v}"`)) problems.push(['component', `${c.name} ${axis.prop}="${v}"`, 'missing in code', 'in Figma'])
+      continue
+    }
     // A Figma variant can map to a true/false prop, e.g. Active=On|Off <-> isActive.
     if (axis.kind === 'boolean') {
       const src = readFileSync(new URL('../' + c.code.file, import.meta.url), 'utf8')
