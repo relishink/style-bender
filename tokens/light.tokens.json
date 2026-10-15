@@ -148,6 +148,30 @@
     "radius": {
       "$type": "dimension",
       "$value": "{primitive.radius.base}"
+    },
+    "brand": {
+      "$type": "color",
+      "$value": "{primitive.violet.700}"
+    },
+    "brand-foreground": {
+      "$type": "color",
+      "$value": "{primitive.neutral.0}"
+    },
+    "brand-accent": {
+      "$type": "color",
+      "$value": "{primitive.violet.300}"
+    },
+    "brand-ink": {
+      "$type": "color",
+      "$value": "{primitive.ink.900}"
+    },
+    "brand-wordmark": {
+      "$type": "color",
+      "$value": "{primitive.violet.700}"
+    },
+    "brand-surface": {
+      "$type": "color",
+      "$value": "{primitive.ink.50}"
     }
   }
 }

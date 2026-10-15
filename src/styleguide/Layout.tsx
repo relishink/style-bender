@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/ui/logo'
 import { routes } from './routes'
 import { text } from './type'
 
@@ -8,7 +9,7 @@ export function Layout({ current, children }: { current: string; children: React
   return (
     <div className="flex min-h-screen bg-background text-foreground">
       <nav className="w-60 shrink-0 border-r border-border bg-sidebar p-6 text-sidebar-foreground">
-        <a href="#color" style={text('heading-4')}>style-bender</a>
+        <a href="#brand" className="block" aria-label="Style Bender style guide, brand page"><Logo className="h-7" /></a>
         {(['Foundations', 'Components', 'Library'] as const).map((section) => (
           <div key={section} className="mt-8">
             <p className="text-muted-foreground" style={text('caption')}>{section}</p>

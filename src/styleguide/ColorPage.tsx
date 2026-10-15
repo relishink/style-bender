@@ -13,7 +13,7 @@ function Swatch({ css, dark }: { css: string; dark?: boolean }) {
   )
 }
 
-function ColorTable({ tokens }: { tokens: ColorToken[] }) {
+export function ColorTable({ tokens }: { tokens: ColorToken[] }) {
   return (
     <table className="w-full border-collapse text-left" style={text('paragraph-small-normal')}>
       <thead className="text-muted-foreground" style={text('paragraph-mini-medium')}>

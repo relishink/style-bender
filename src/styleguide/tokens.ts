@@ -46,7 +46,9 @@ export const colorGroups: { title: string; description: string; tokens: ColorTok
   { title: 'Borders and focus', description: 'Lines, form fields and the focus ring.', tokens: group((c) => ['--border', '--input', '--ring'].includes(c)) },
   { title: 'Sidebar', description: 'Used only by the sidebar.', tokens: group((c) => c.startsWith('--sidebar')) },
   { title: 'Charts', description: 'Data series, in order.', tokens: group((c) => c.startsWith('--chart')) },
+  { title: 'Brand', description: 'The Style Bender logo and brand moments only, never component states.', tokens: group((c) => c.startsWith('--brand')) },
 ]
+export const brandColors = colorGroups.find((g) => g.title === 'Brand')!.tokens
 
 export const primitiveColors = Object.entries(flatten(primitives as Json))
   .filter(([id, t]) => t.$type === 'color' && !id.includes('white-alpha'))

@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T17:57:03.228Z",
+  "exportedAt": "2026-10-15T19:50:37.014Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -861,6 +861,160 @@
       "figma": "out-of-scale/2",
       "light": 2,
       "dark": 2
+    },
+    "--violet-50": {
+      "figma": "brand/violet/50",
+      "light": {
+        "hex": "#f5f3ff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#f5f3ff",
+        "alpha": 1
+      }
+    },
+    "--violet-100": {
+      "figma": "brand/violet/100",
+      "light": {
+        "hex": "#ede9fe",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ede9fe",
+        "alpha": 1
+      }
+    },
+    "--violet-300": {
+      "figma": "brand/violet/300",
+      "light": {
+        "hex": "#c4b5fd",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#c4b5fd",
+        "alpha": 1
+      }
+    },
+    "--violet-600": {
+      "figma": "brand/violet/600",
+      "light": {
+        "hex": "#7c3aed",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#7c3aed",
+        "alpha": 1
+      }
+    },
+    "--violet-700": {
+      "figma": "brand/violet/700",
+      "light": {
+        "hex": "#6d28d9",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#6d28d9",
+        "alpha": 1
+      }
+    },
+    "--ink-50": {
+      "figma": "brand/ink/50",
+      "light": {
+        "hex": "#faf8ff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#faf8ff",
+        "alpha": 1
+      }
+    },
+    "--ink-900": {
+      "figma": "brand/ink/900",
+      "light": {
+        "hex": "#1e1433",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#1e1433",
+        "alpha": 1
+      }
+    },
+    "--ink-950": {
+      "figma": "brand/ink/950",
+      "light": {
+        "hex": "#140b26",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#140b26",
+        "alpha": 1
+      }
+    },
+    "--brand": {
+      "figma": "shadcn colors/brand/brand",
+      "light": {
+        "hex": "#6d28d9",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#7c3aed",
+        "alpha": 1
+      }
+    },
+    "--brand-foreground": {
+      "figma": "shadcn colors/brand/brand-foreground",
+      "light": {
+        "hex": "#ffffff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#ffffff",
+        "alpha": 1
+      }
+    },
+    "--brand-accent": {
+      "figma": "shadcn colors/brand/brand-accent",
+      "light": {
+        "hex": "#c4b5fd",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#c4b5fd",
+        "alpha": 1
+      }
+    },
+    "--brand-ink": {
+      "figma": "shadcn colors/brand/brand-ink",
+      "light": {
+        "hex": "#1e1433",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#f5f3ff",
+        "alpha": 1
+      }
+    },
+    "--brand-wordmark": {
+      "figma": "shadcn colors/brand/brand-wordmark",
+      "light": {
+        "hex": "#6d28d9",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#c4b5fd",
+        "alpha": 1
+      }
+    },
+    "--brand-surface": {
+      "figma": "shadcn colors/brand/brand-surface",
+      "light": {
+        "hex": "#faf8ff",
+        "alpha": 1
+      },
+      "dark": {
+        "hex": "#140b26",
+        "alpha": 1
+      }
     }
   },
   "textStyles": {
@@ -1889,6 +2043,32 @@
       "radius": {
         "px": 10,
         "token": "--radius"
+      }
+    },
+    "5083:22": {
+      "name": "Symbol",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        64,
+        64
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "5083:23": {
+      "name": "Logo",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        836,
+        150
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
       }
     }
   }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { BrandPage } from './styleguide/BrandPage'
 import { BannerPage } from './styleguide/BannerPage'
 import { ButtonPage } from './styleguide/ButtonPage'
 import { CardPage } from './styleguide/CardPage'
@@ -11,7 +12,7 @@ import { VisualPage } from './styleguide/VisualPage'
 import { libraryEntries } from './styleguide/library'
 import { LibraryPage } from './styleguide/library/LibraryPage'
 
-const pages: Record<string, () => React.JSX.Element> = { color: ColorPage, typography: TypographyPage, button: ButtonPage, banner: BannerPage, card: CardPage, pagination: PaginationPage, input: InputPage }
+const pages: Record<string, () => React.JSX.Element> = { brand: BrandPage, color: ColorPage, typography: TypographyPage, button: ButtonPage, banner: BannerPage, card: CardPage, pagination: PaginationPage, input: InputPage }
 const currentPath = () => window.location.hash.slice(1) || 'color'
 
 function App() {

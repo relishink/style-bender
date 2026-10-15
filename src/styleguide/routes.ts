@@ -3,6 +3,7 @@ import { libraryEntries } from './library'
 export type Route = { path: string; label: string; section: 'Foundations' | 'Components' | 'Library'; ready: boolean }
 
 export const routes: Route[] = [
+  { path: 'brand', label: 'Brand', section: 'Foundations', ready: true },
   { path: 'color', label: 'Color', section: 'Foundations', ready: true },
   { path: 'typography', label: 'Typography', section: 'Foundations', ready: true },
   { path: 'button', label: 'Button', section: 'Components', ready: true },

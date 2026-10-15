@@ -327,6 +327,108 @@
           "unit": "rem"
         }
       }
+    },
+    "violet": {
+      "$description": "Brand violet, exact sRGB values from the Style Bender logo (Claude Design). Tailwind v3 violet.",
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.9529,
+            1.0
+          ],
+          "hex": "#f5f3ff"
+        }
+      },
+      "100": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9294,
+            0.9137,
+            0.9961
+          ],
+          "hex": "#ede9fe"
+        }
+      },
+      "300": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7686,
+            0.7098,
+            0.9922
+          ],
+          "hex": "#c4b5fd"
+        }
+      },
+      "600": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4863,
+            0.2275,
+            0.9294
+          ],
+          "hex": "#7c3aed"
+        }
+      },
+      "700": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4275,
+            0.1569,
+            0.851
+          ],
+          "hex": "#6d28d9"
+        }
+      }
+    },
+    "ink": {
+      "$description": "Violet-tinted neutrals from the Style Bender logo backgrounds and wordmark.",
+      "50": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9804,
+            0.9725,
+            1.0
+          ],
+          "hex": "#faf8ff"
+        }
+      },
+      "900": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1176,
+            0.0784,
+            0.2
+          ],
+          "hex": "#1e1433"
+        }
+      },
+      "950": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0784,
+            0.0431,
+            0.149
+          ],
+          "hex": "#140b26"
+        }
+      }
     }
   },
   "spacing": {

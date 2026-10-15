@@ -1004,6 +1004,36 @@
         "Order": "Sonner stacks toasts itself"
       },
       "skipRadius": "radius is passed to Sonner as --border-radius: var(--radius)"
+    },
+    {
+      "name": "LogoMark",
+      "figma": {
+        "componentSet": "Symbol",
+        "nodeId": "5083:22",
+        "page": "Brand (style-bender)"
+      },
+      "code": {
+        "file": "src/components/ui/logo.tsx",
+        "export": "LogoMark"
+      },
+      "props": {},
+      "level": "brand",
+      "skipRadius": "the symbol tile is a path from the Claude Design SVG (rx 15 of 64), not a radius token"
+    },
+    {
+      "name": "Logo",
+      "figma": {
+        "componentSet": "Logo",
+        "nodeId": "5083:23",
+        "page": "Brand (style-bender)"
+      },
+      "code": {
+        "file": "src/components/ui/logo.tsx",
+        "export": "Logo"
+      },
+      "props": {},
+      "level": "brand",
+      "skipRadius": "the symbol tile is a path from the Claude Design SVG (rx 15 of 64), not a radius token"
     }
   ]
 }

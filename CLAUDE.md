@@ -32,6 +32,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - Card (`card.tsx`): designed in Figma by David ("Card - Nova - Confirmation", node 5021:12383), brought to code in Phase 4.
 - Pagination (`pagination.tsx`): from the kit's "Pagination" (node 1962:14050), built from our Buttons; number buttons map Figma `Active=On|Off` to `isActive`.
 - Input (`input.tsx`): code first. shadcn's Input plus a hover state; the Figma component "Input" (page "Input (style-bender)", node 5064:12273) was generated from it. Focus and error rings use `--ring-focus` / `--ring-error` (Figma cannot fade a variable, so faded colors are tokens).
+- Brand (`logo.tsx`: `Logo`, `LogoMark`): designed in Claude Design, built in Figma as "Symbol" (5083:22) and "Logo" (5083:23) on page "Brand (style-bender)", exported as outlined SVG. Colors are `violet`/`ink` primitives and `brand-*` roles; brand colors are for the logo only, components stay neutral. `public/favicon.svg` copies the brand hex values (browsers can't read CSS variables there).
 - The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
 - No Storybook.
 
