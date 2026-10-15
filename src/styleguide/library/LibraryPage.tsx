@@ -22,9 +22,10 @@ export type LibraryEntry = {
 type Axis = { figmaProperty: string; values: Record<string, unknown>; kind?: string; codeOnly?: string[] }
 
 export function LibraryPage({ entry }: { entry: LibraryEntry }) {
-  const m = mappingFor(entry.mapping ?? entry.name) as unknown as {
-    figma: { componentSet: string; page: string; nodeId: string }
-    code: { file: string; export: string }
+  const found = mappingFor(entry.mapping ?? entry.name)
+  const m = (found ?? { figma: null, code: null, props: {} }) as unknown as {
+    figma: { componentSet: string; page: string; nodeId: string } | null
+    code: { file: string; export: string } | null
     props: Record<string, Axis>
     states?: Axis
     figmaOnly?: Record<string, string>
@@ -51,11 +52,13 @@ export function LibraryPage({ entry }: { entry: LibraryEntry }) {
         Specifications: (
           <>
             <Section title="Figma and code">
+              {!m.figma ? <p style={text('paragraph-normal')}>The free Figma kit has no {entry.name} component, so this one is code only and not part of the parity check.</p> : <>
               <p className="mb-4 text-muted-foreground" style={text('paragraph-normal')}>
-                Figma: “{m.figma.componentSet}” on the “{m.figma.page}” page of the kit. Code: {m.code.file}. npm run parity checks
+                Figma: “{m.figma.componentSet}” on the “{m.figma.page}” page of the kit. Code: {m.code!.file}. npm run parity checks
                 this mapping in both directions and compares the corner radius token.
               </p>
               {rows.length > 0 ? <Table head={['Figma', 'Code']} rows={rows} /> : <p style={text('paragraph-normal')}>No variants to map.</p>}
+              </>}
             </Section>
           </>
         ),
