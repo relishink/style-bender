@@ -192,3 +192,16 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > I want to show that we can pull something down into Figma. Add a simple component from shadcn: a typical input with active, hover, errors and such.
+
+## 2026-10-15: Library batch 3 and the brand
+
+**What we did.** Batch 3 of the library (overlays and menus: Dialog, Alert Dialog, Sheet, Drawer, Popover, Hover Card, Dropdown and Context Menu, Menubar, Navigation Menu, Command, Sonner). Then the Style Bender brand: the logo designed in Claude Design became Figma components ("Symbol", "Logo") bound to new brand variables, the code `Logo` / `LogoMark` components, brand tokens (`violet`, `ink`, `brand-*`), a favicon and a Brand foundations page.
+
+**What broke.** Nothing, but parity did its job: right after adding the brand tokens it reported all 14 as "missing in Figma" until the variables were created there.
+
+**Fixes (Git wins).** Figma Dialog corners 18 px → radius-xl, Drawer top corners 10 px → radius-xl, to match code.
+
+**Worth repeating.**
+- The wordmark is live text in Figma (Bricolage Grotesque ExtraBold), exported with outlined text, so code gets exact vector shapes without loading the font, and every color is a token class (`fill-brand-ink`), so light and dark come for free.
+- Brand colors use the exact sRGB hex values from the logo, not Tailwind v4's oklch violets, which render slightly differently.
+- Favicons cannot read CSS variables: `public/favicon.svg` copies the token values and says so.
