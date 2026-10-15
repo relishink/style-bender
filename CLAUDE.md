@@ -14,7 +14,8 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 1. **Git is the source of truth.** When Figma and code disagree, stop and show the diff to David.
 2. **Commit straight to `main`.** No branches or PRs unless David asks. Keep commits small, one concern each.
 3. **No hard-coded colors, font sizes or spacing in components.** Spacing classes read `--spacing` and `text-xs/sm/base/lg` read the typography tokens, so Tailwind's scale is token-backed. Everything comes from tokens. No Tailwind arbitrary values such as `bg-[#...]`.
-   - Colors and radius now come from `tokens/` via `src/styles/tokens.css` (generated, never edit by hand). Typography tokens (`type.*`, from the Figma kit's text styles) exist; Heading and Text will use them in Phase 3.
+   - Colors, radius, spacing and type come from `tokens/` via `src/styles/tokens.css` (generated, never edit by hand). Heading and Text use the typography tokens.
+   - Enforced: `npm run check:tokens` (also in the pre-commit hook and CI).
 4. **Show a short plan before each phase and wait for David's OK.**
 5. **After each working session, append to `docs/lesson-log.md`:** what we did, what broke, the fix, and any prompt that worked well.
 
@@ -43,7 +44,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - `public/figma/`: PNG renders exported from Figma (read-only `use_figma`) for the side-by-side on each component page.
 
 ## Commands
-- `npm run tokens`: rebuild `src/styles/tokens.css` from `tokens/`. `npm run dev`: style guide app. `npm run build` (runs tokens first): typecheck + build. `npm run lint`. `npm run parity`: compare `tokens/` with the saved Figma snapshot.
+- `npm run tokens`: rebuild `src/styles/tokens.css` from `tokens/`. `npm run dev`: style guide app. `npm run build` (runs tokens first): typecheck + build. `npm run lint`. `npm run parity`: compare `tokens/` with the saved Figma snapshot. `npm run check:tokens`: flag hard-coded values in components. `npm run visual`: pixel diff of components against `public/figma/*.png`.
 
 ## Tools
 - `gh` is at `~/.local/bin/gh`, logged in with a fine-grained token for this repo only. Never touch other repos or orgs.
@@ -54,3 +55,8 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 3. Add or update the entry in `figma-map.json`; add its node ID to `COMPONENT_SET_IDS` in `parity/figma-snapshot.figma.js`.
 4. Re-run the snapshot, save `parity/figma-snapshot.json`, run `npm run parity` until it reports 1:1.
 5. Re-export the Figma renders for the docs page and check sizes in the browser (Figma strokes sit inside the box: use `inset-ring`, not `border`, when height must match).
+
+## Guardrails
+- Pre-commit hook (`.githooks/pre-commit`, installed by `npm install`): `check:tokens` and `parity` must pass.
+- CI (`.github/workflows/checks.yml`) on every push: build, lint, `check:tokens`, `parity`, `visual`. Diff images are uploaded when the pixel diff fails.
+- Pixel diff: sizes must match exactly; up to 5% of pixels may differ (text anti-aliasing differs between Figma, macOS and Linux).

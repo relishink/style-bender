@@ -144,3 +144,20 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Lesson**
 - From design change to matching code took one approval and a one-line diff, because the check said exactly which token on which component had changed.
+
+## 2026-10-15: Phase 5, guardrails, pixel diff and the deck
+
+**What we did**
+- `npm run check:tokens` flags raw colors, raw lengths and Tailwind arbitrary values in components, while allowing arbitrary selector variants like `data-[slot=card]:`. A test edit with `bg-[#f4f4f5]` and `gap-[7px]` was caught.
+- A pre-commit hook runs `check:tokens` and `parity`; a commit with a hard-coded color was refused.
+- GitHub Actions runs build, lint, `check:tokens`, `parity` and `visual` on every push.
+- `npm run visual`: Playwright screenshots each component on a bare `#visual` page and compares it with the Figma exports (pixelmatch).
+- The first pixel diff found two real drifts: every Button was 59px wide instead of 57 (shadcn's invisible 1px border), and Figma drew the Banner stroke outside the box (402 × 38). Fixed in code (inset ring) and in Figma (stroke Inside). All 11 renders now match.
+- Built the training deck in Claude Slides (13 slides), including a text slide on an optional weekly drift check.
+
+**What broke, and the fix**
+- In CI the Card's pixel diff was 3.8% (1.1% on a Mac): Linux anti-aliases text differently. Sizes stay strict; the pixel tolerance is now 5%, with the reason in the script.
+- One of four base64 Banner exports came back with a bad piece again; the checksummed pieces made it a one-piece re-fetch.
+
+**Prompt that worked**
+> Weekly Figma check: we don't need it in practice, but add a slide that shows the capability. Nothing fancy.
