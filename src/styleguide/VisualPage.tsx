@@ -1,6 +1,7 @@
 import { Banner } from '@/components/ui/banner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 
 // Not in the navigation: a bare page for scripts/visual-diff.mjs. Each [data-visual] element is
 // screenshotted and compared with the Figma export of the same name in public/figma/.
@@ -22,6 +23,20 @@ export function VisualPage() {
           <Banner variant={k} title="Title" />
         </div>
       ))}
+      <div data-visual="pagination" data-scale="2" className="inline-flex">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
+            <PaginationItem><PaginationLink href="#" isActive>1</PaginationLink></PaginationItem>
+            <PaginationItem><PaginationLink href="#">2</PaginationLink></PaginationItem>
+            <PaginationItem><PaginationLink href="#">3</PaginationLink></PaginationItem>
+            <PaginationItem><PaginationLink href="#">4</PaginationLink></PaginationItem>
+            <PaginationItem><PaginationEllipsis /></PaginationItem>
+            <PaginationItem><PaginationLink href="#">10</PaginationLink></PaginationItem>
+            <PaginationItem><PaginationNext href="#" /></PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
       <div data-visual="card-confirmation" data-scale="1" className="inline-flex">
         <Card className="w-100">
           <CardHeader>

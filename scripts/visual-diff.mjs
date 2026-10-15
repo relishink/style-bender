@@ -4,7 +4,9 @@
 //   npm run visual   ->  table of mismatched pixels; diff images in parity/visual/
 //
 // Both images are put on white first (Figma exports are transparent outside the shape).
-// Sizes must match exactly. Pixels may differ a little: Figma, Chrome on macOS and Chrome on
+// Sizes may differ by at most 1px (SIZE_TOLERANCE): Figma rounds text boxes up to whole pixels
+// ("Previous" is 56.6px in Chrome, 57px in Figma), so a row of text buttons can come out 1px
+// narrower in code. Every real drift found so far was 2px or more. Pixels may differ a little: Figma, Chrome on macOS and Chrome on
 // Linux (CI) each anti-alias text differently. The text-heavy Card measures ~1% on a Mac and
 // ~4% in CI, so THRESHOLD is 5%. Real drift shows up as a size mismatch or far above that.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -14,6 +16,7 @@ import { PNG } from 'pngjs'
 import { createServer } from 'vite'
 
 const THRESHOLD = 0.05 // 5% of pixels may differ
+const SIZE_TOLERANCE = 1 // CSS px
 const OUT = new URL('../parity/visual/', import.meta.url)
 mkdirSync(OUT, { recursive: true })
 
@@ -40,7 +43,7 @@ try {
       const name = await el.getAttribute('data-visual')
       const code = onWhite(PNG.sync.read(await el.screenshot()))
       const figma = onWhite(PNG.sync.read(readFileSync(new URL(`../public/figma/${name}.png`, import.meta.url))))
-      const sizeOk = code.width === figma.width && code.height === figma.height
+      const sizeOk = Math.abs(code.width - figma.width) <= SIZE_TOLERANCE * scale && Math.abs(code.height - figma.height) <= SIZE_TOLERANCE * scale
       const w = Math.max(code.width, figma.width), h = Math.max(code.height, figma.height)
       const pad = (img) => { const p = new PNG({ width: w, height: h, fill: true }); p.data.fill(255); PNG.bitblt(img, p, 0, 0, img.width, img.height, 0, 0); return p }
       const a = pad(code), b = pad(figma), diff = new PNG({ width: w, height: h })
