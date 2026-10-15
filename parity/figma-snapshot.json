@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T17:40:33.298Z",
+  "exportedAt": "2026-10-15T17:48:25.633Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -856,6 +856,11 @@
       "figma": "out-of-scale/4",
       "light": 4,
       "dark": 4
+    },
+    "--radius-2xs": {
+      "figma": "out-of-scale/2",
+      "light": 2,
+      "dark": 2
     }
   },
   "textStyles": {
@@ -1450,6 +1455,259 @@
       "size": [
         260,
         16
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "1953:33091": {
+      "name": "Line Accordion Trigger - Nova",
+      "variantCount": 5,
+      "options": {
+        "State": [
+          "Closed",
+          "Open",
+          "Focus",
+          "Hover",
+          "Disabled"
+        ]
+      },
+      "size": [
+        480,
+        44
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:31310": {
+      "name": "Aspect Ratio",
+      "variantCount": 4,
+      "options": {
+        "Aspect": [
+          "16:9",
+          "1:1",
+          "9:16",
+          "21:9"
+        ]
+      },
+      "size": [
+        400,
+        225
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1962:13741": {
+      "name": "Breadcrumb",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        383,
+        20
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:27724": {
+      "name": "Button Group Button - Nova",
+      "variantCount": 192,
+      "options": {
+        "Variant": [
+          "Outline",
+          "Ghost"
+        ],
+        "Size": [
+          "Default",
+          "Large",
+          "Small",
+          "Extra small"
+        ],
+        "Position": [
+          "Left",
+          "Middle",
+          "Right",
+          "Single",
+          "Top",
+          "Bottom"
+        ],
+        "State": [
+          "Default",
+          "Focus",
+          "Hover",
+          "Disabled"
+        ]
+      },
+      "size": [
+        57,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:13582": {
+      "name": "Select & Combobox - Nova",
+      "variantCount": 72,
+      "options": {
+        "Size": [
+          "Default",
+          "Large",
+          "Small",
+          "Extra small"
+        ],
+        "State": [
+          "Placeholder",
+          "Default",
+          "Focus",
+          "Error focus",
+          "Disabled",
+          "Error"
+        ],
+        "Lines": [
+          "1 Line",
+          "2 Lines",
+          "2 Lines Alt"
+        ]
+      },
+      "size": [
+        320,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:14453": {
+      "name": "Slider Horizontal - Nova",
+      "variantCount": 6,
+      "options": {
+        "Type": [
+          "Default",
+          "Range Narrow",
+          "Range Wide"
+        ],
+        "State": [
+          "Active",
+          "Disabled"
+        ]
+      },
+      "size": [
+        240,
+        16
+      ],
+      "radius": {
+        "px": 999,
+        "token": "--radius-full"
+      }
+    },
+    "1953:12862": {
+      "name": "Basic Table Cell - Nova",
+      "variantCount": 4,
+      "options": {
+        "Parity": [
+          "Odd",
+          "Even"
+        ],
+        "Alignment": [
+          "Right",
+          "Left"
+        ]
+      },
+      "size": [
+        240,
+        38
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1953:12386": {
+      "name": "Tabs (segmented) - Nova",
+      "variantCount": 3,
+      "options": {
+        "Size": [
+          "Default",
+          "Large",
+          "Small"
+        ]
+      },
+      "size": [
+        94,
+        26
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1999:10837": {
+      "name": "Toggle Button - Nova",
+      "variantCount": 192,
+      "options": {
+        "Skin": [
+          "Outline",
+          "Ghost"
+        ],
+        "Size": [
+          "Default",
+          "Large",
+          "Small",
+          "Extra small"
+        ],
+        "Position": [
+          "Left",
+          "Middle",
+          "Right",
+          "Single"
+        ],
+        "Active?": [
+          "Yes",
+          "No"
+        ],
+        "State": [
+          "Default",
+          "Disabled",
+          "Focus"
+        ]
+      },
+      "size": [
+        57,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:11601": {
+      "name": "Tooltip - Nova",
+      "variantCount": 12,
+      "options": {
+        "Side": [
+          "Top",
+          "Bottom",
+          "Left",
+          "Right"
+        ],
+        "Type": [
+          "Default",
+          "Formatted",
+          "Shortcut"
+        ]
+      },
+      "size": [
+        78,
+        28
       ],
       "radius": {
         "px": 8,

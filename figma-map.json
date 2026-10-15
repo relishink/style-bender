@@ -545,6 +545,274 @@
         }
       },
       "level": "library"
+    },
+    {
+      "name": "Accordion",
+      "figma": {
+        "componentSet": "Line Accordion Trigger - Nova",
+        "nodeId": "1953:33091",
+        "page": "Accordion •"
+      },
+      "code": {
+        "file": "src/components/ui/accordion.tsx",
+        "export": "AccordionTrigger"
+      },
+      "props": {},
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Closed": "rest",
+          "Open": "[data-panel-open]",
+          "Focus": ":focus-visible",
+          "Hover": ":hover",
+          "Disabled": ":disabled"
+        }
+      },
+      "skipRadius": "rounded-lg in code only shapes the focus ring; the line accordion has square corners"
+    },
+    {
+      "name": "Aspect Ratio",
+      "figma": {
+        "componentSet": "Aspect Ratio",
+        "nodeId": "1953:31310",
+        "page": "Aspect Ratio"
+      },
+      "code": {
+        "file": "src/components/ui/aspect-ratio.tsx",
+        "export": "AspectRatio"
+      },
+      "props": {
+        "ratio": {
+          "figmaProperty": "Aspect",
+          "kind": "prop",
+          "values": {
+            "16:9": "16 / 9",
+            "1:1": "1",
+            "9:16": "9 / 16",
+            "21:9": "21 / 9"
+          }
+        }
+      },
+      "level": "library",
+      "skipRadius": "the rounded corner belongs to the example image, not the AspectRatio box"
+    },
+    {
+      "name": "Breadcrumb",
+      "figma": {
+        "componentSet": "Breadcrumb",
+        "nodeId": "1962:13741",
+        "page": "Breadcrumb"
+      },
+      "code": {
+        "file": "src/components/ui/breadcrumb.tsx",
+        "export": "Breadcrumb"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Button Group",
+      "figma": {
+        "componentSet": "Button Group Button - Nova",
+        "nodeId": "1953:27724",
+        "page": "Button Group •"
+      },
+      "code": {
+        "file": "src/components/ui/button-group.tsx",
+        "export": "ButtonGroup"
+      },
+      "props": {},
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Focus": ":focus-visible",
+          "Hover": ":hover",
+          "Disabled": ":disabled"
+        }
+      },
+      "figmaOnly": {
+        "Variant": "variant of each Button inside",
+        "Size": "size of each Button inside",
+        "Position": "first / middle / last child (ButtonGroup removes the inner corners)"
+      },
+      "skipRadius": "corners come from the Buttons inside the group"
+    },
+    {
+      "name": "Select",
+      "figma": {
+        "componentSet": "Select & Combobox - Nova",
+        "nodeId": "1953:13582",
+        "page": "Select & Combobox •"
+      },
+      "code": {
+        "file": "src/components/ui/select.tsx",
+        "export": "SelectTrigger"
+      },
+      "props": {
+        "size": {
+          "figmaProperty": "Size",
+          "kind": "prop",
+          "checkValues": true,
+          "values": {
+            "Default": "default",
+            "Small": "sm"
+          },
+          "figmaOnlyValues": [
+            "Large",
+            "Extra small"
+          ]
+        }
+      },
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Placeholder": "[data-placeholder]",
+          "Default": "rest",
+          "Focus": ":focus-visible",
+          "Error focus": "[aria-invalid]:focus-visible",
+          "Disabled": ":disabled",
+          "Error": "[aria-invalid]"
+        }
+      },
+      "figmaOnly": {
+        "Lines": "two-line items are content inside SelectItem"
+      }
+    },
+    {
+      "name": "Slider",
+      "figma": {
+        "componentSet": "Slider Horizontal - Nova",
+        "nodeId": "1953:14453",
+        "page": "Slider •"
+      },
+      "code": {
+        "file": "src/components/ui/slider.tsx",
+        "export": "Slider"
+      },
+      "props": {},
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Active": "rest",
+          "Disabled": "[data-disabled]"
+        }
+      },
+      "figmaOnly": {
+        "Type": "one value (Default) or two values (Range): defaultValue={[25]} or {[25, 75]}"
+      }
+    },
+    {
+      "name": "Table",
+      "figma": {
+        "componentSet": "Basic Table Cell - Nova",
+        "nodeId": "1953:12862",
+        "page": "Table •"
+      },
+      "code": {
+        "file": "src/components/ui/table.tsx",
+        "export": "TableCell"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Parity": "striping is a TableRow class",
+        "Alignment": "text-right class on numeric cells"
+      }
+    },
+    {
+      "name": "Tabs",
+      "figma": {
+        "componentSet": "Tabs (segmented) - Nova",
+        "nodeId": "1953:12386",
+        "page": "Tabs •"
+      },
+      "code": {
+        "file": "src/components/ui/tabs.tsx",
+        "export": "TabsList"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Size": "h-* class on TabsList (default is h-8)"
+      }
+    },
+    {
+      "name": "Toggle",
+      "figma": {
+        "componentSet": "Toggle Button - Nova",
+        "nodeId": "1999:10837",
+        "page": "Toggle & Toggle Group •"
+      },
+      "code": {
+        "file": "src/components/ui/toggle.tsx",
+        "export": "Toggle"
+      },
+      "props": {
+        "variant": {
+          "figmaProperty": "Skin",
+          "values": {
+            "Ghost": "default",
+            "Outline": "outline"
+          }
+        },
+        "size": {
+          "figmaProperty": "Size",
+          "values": {
+            "Default": "default",
+            "Small": "sm",
+            "Large": "lg"
+          },
+          "figmaOnlyValues": [
+            "Extra small"
+          ]
+        }
+      },
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Disabled": ":disabled",
+          "Focus": ":focus-visible"
+        }
+      },
+      "figmaOnly": {
+        "Active?": "pressed / aria-pressed",
+        "Position": "first / middle / last item inside a ToggleGroup with spacing={0}"
+      }
+    },
+    {
+      "name": "Tooltip",
+      "figma": {
+        "componentSet": "Tooltip - Nova",
+        "nodeId": "1953:11601",
+        "page": "Tooltip •"
+      },
+      "code": {
+        "file": "src/components/ui/tooltip.tsx",
+        "export": "TooltipContent"
+      },
+      "props": {
+        "side": {
+          "figmaProperty": "Side",
+          "kind": "prop",
+          "values": {
+            "Top": "top",
+            "Bottom": "bottom",
+            "Left": "left",
+            "Right": "right"
+          }
+        }
+      },
+      "level": "library",
+      "figmaOnly": {
+        "Type": "Formatted and Shortcut are content (bold text, a Kbd) inside TooltipContent"
+      }
     }
   ]
 }
