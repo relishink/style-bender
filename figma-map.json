@@ -1362,6 +1362,293 @@
         "Slides": "number of CarouselItem children",
         "Orientation": "this set is orientation=\"vertical\""
       }
+    },
+    {
+      "name": "Sidebar Menu Button",
+      "figma": {
+        "componentSet": "Sidebar Item / Expanded / 1st Level - Nova",
+        "nodeId": "2047:13506",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "SidebarMenuButton"
+      },
+      "props": {},
+      "level": "library",
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Active": "isActive (data-active)",
+          "Focus": ":focus-visible",
+          "Active Focus": "isActive + :focus-visible"
+        }
+      },
+      "figmaOnly": {
+        "Type": "Base = SidebarMenuButton; Expanded / Collapsed = inside a Collapsible with a chevron; Dropdown = inside a DropdownMenu; Badge = with SidebarMenuBadge"
+      },
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "overflow-hidden rounded-md p-2"
+      }
+    },
+    {
+      "name": "Sidebar Menu Button (collapsed)",
+      "figma": {
+        "componentSet": "Sidebar Item / Collapsed - Nova",
+        "nodeId": "2047:13456",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "SidebarMenuButton"
+      },
+      "props": {
+        "isActive": {
+          "figmaProperty": "State",
+          "kind": "boolean",
+          "values": {
+            "Active": true,
+            "Regular": false
+          }
+        }
+      },
+      "level": "library",
+      "figmaOnly": {
+        "note": "the same button when the Sidebar has collapsible=\"icon\" and is collapsed"
+      },
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "overflow-hidden rounded-md p-2"
+      }
+    },
+    {
+      "name": "Sidebar Menu Sub Button",
+      "figma": {
+        "componentSet": "Sidebar Item / Expanded / 2nd Level - Nova",
+        "nodeId": "2047:13613",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "SidebarMenuSubButton"
+      },
+      "props": {
+        "isActive": {
+          "figmaProperty": "State",
+          "kind": "boolean",
+          "values": {
+            "Active": true,
+            "Default": false
+          }
+        }
+      },
+      "level": "library",
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "rounded-md"
+      }
+    },
+    {
+      "name": "Sidebar Group Label",
+      "figma": {
+        "componentSet": "Sidebar Group Label - Nova",
+        "nodeId": "2047:13640",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "SidebarGroupLabel"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "Base = SidebarGroupLabel; Action = with SidebarGroupAction; Expanded / Collapsed = label as a CollapsibleTrigger"
+      },
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "rounded-md"
+      }
+    },
+    {
+      "name": "Sidebar Menu Badge",
+      "figma": {
+        "componentSet": "Sidebar Badge - Nova",
+        "nodeId": "2047:13471",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "SidebarMenuBadge"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Variant": "Primary = className with bg-primary text-primary-foreground"
+      },
+      "codeRadius": {
+        "token": "--radius-md",
+        "from": "rounded-md"
+      }
+    },
+    {
+      "name": "Sidebar",
+      "figma": {
+        "componentSet": "Sidebar - With Children",
+        "nodeId": "2351:3044",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "Sidebar"
+      },
+      "props": {},
+      "level": "library",
+      "skipRadius": "a layout of SidebarMenuButtons, each checked above"
+    },
+    {
+      "name": "Sidebar (collapsed)",
+      "figma": {
+        "componentSet": "Sidebar - Collapsed",
+        "nodeId": "2351:3048",
+        "page": "Sidebar •"
+      },
+      "code": {
+        "file": "src/components/ui/sidebar.tsx",
+        "export": "Sidebar"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "note": "collapsible=\"icon\", collapsed"
+      },
+      "skipRadius": "a layout of collapsed SidebarMenuButtons, checked above"
+    },
+    {
+      "name": "Chart",
+      "figma": {
+        "componentSet": "Chart",
+        "nodeId": "1999:12790",
+        "page": "Chart"
+      },
+      "code": {
+        "file": "src/components/ui/chart.tsx",
+        "export": "ChartContainer"
+      },
+      "props": {},
+      "level": "library",
+      "skipRadius": "the rounded shape is the kit's placeholder; the chart itself is square"
+    },
+    {
+      "name": "Chart Legend",
+      "figma": {
+        "componentSet": "Legend",
+        "nodeId": "1999:13022",
+        "page": "Chart"
+      },
+      "code": {
+        "file": "src/components/ui/chart.tsx",
+        "export": "ChartLegendContent"
+      },
+      "props": {},
+      "level": "library",
+      "codeRadius": {
+        "token": "--radius-2xs",
+        "from": "rounded-2xs"
+      }
+    },
+    {
+      "name": "Line Chart",
+      "figma": {
+        "componentSet": "Line chart",
+        "nodeId": "1999:13135",
+        "page": "Chart"
+      },
+      "code": {
+        "file": "src/components/ui/chart.tsx",
+        "export": "ChartContainer"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "Recharts <LineChart> setups: type=\"natural\" | \"linear\" | \"step\" on <Line>, several <Line>s for Multiple"
+      },
+      "skipRadius": "square in Figma; the chart sits inside a Card"
+    },
+    {
+      "name": "Area Chart",
+      "figma": {
+        "componentSet": "Area chart",
+        "nodeId": "1999:13167",
+        "page": "Chart"
+      },
+      "code": {
+        "file": "src/components/ui/chart.tsx",
+        "export": "ChartContainer"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "Recharts <AreaChart> setups: type on <Area>, stackId for Stacked"
+      },
+      "skipRadius": "square in Figma; the chart sits inside a Card"
+    },
+    {
+      "name": "Bar Chart",
+      "figma": {
+        "componentSet": "Bar chart",
+        "nodeId": "1999:13206",
+        "page": "Chart"
+      },
+      "code": {
+        "file": "src/components/ui/chart.tsx",
+        "export": "ChartContainer"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "Recharts <BarChart> setups: layout=\"vertical\" for Horizontal, several <Bar>s or stackId"
+      },
+      "skipRadius": "square in Figma; the chart sits inside a Card"
+    },
+    {
+      "name": "Data Table Header",
+      "figma": {
+        "componentSet": "Table Header",
+        "nodeId": "1999:9214",
+        "page": "Data Table"
+      },
+      "code": {
+        "file": "src/components/ui/table.tsx",
+        "export": "TableHead"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Content": "Text / Sortable (a ghost Button with a sort icon) / Checkbox / Empty",
+        "Alignment": "text-right class",
+        "State": "Hover / Active = row hover and data-state=selected"
+      }
+    },
+    {
+      "name": "Data Table Cell",
+      "figma": {
+        "componentSet": "Table Cell",
+        "nodeId": "1999:9349",
+        "page": "Data Table"
+      },
+      "code": {
+        "file": "src/components/ui/table.tsx",
+        "export": "TableCell"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Content": "Text (1 or 2 lines) / Checkbox / Slot (any content)",
+        "Alignment": "text-right class",
+        "State": "Hover / Active = row hover and data-state=selected"
+      }
     }
   ]
 }

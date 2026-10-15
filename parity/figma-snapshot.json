@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T20:14:35.006Z",
+  "exportedAt": "2026-10-15T20:18:56.138Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -2396,6 +2396,280 @@
       "radius": {
         "px": 999,
         "token": "--radius-full"
+      }
+    },
+    "2047:13506": {
+      "name": "Sidebar Item / Expanded / 1st Level - Nova",
+      "variantCount": 20,
+      "options": {
+        "State": [
+          "Active",
+          "Default",
+          "Focus",
+          "Active Focus"
+        ],
+        "Type": [
+          "Base",
+          "Expanded",
+          "Collapsed",
+          "Dropdown",
+          "Badge"
+        ]
+      },
+      "size": [
+        160,
+        32
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2047:13456": {
+      "name": "Sidebar Item / Collapsed - Nova",
+      "variantCount": 2,
+      "options": {
+        "State": [
+          "Regular",
+          "Active"
+        ]
+      },
+      "size": [
+        36,
+        36
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2047:13613": {
+      "name": "Sidebar Item / Expanded / 2nd Level - Nova",
+      "variantCount": 2,
+      "options": {
+        "State": [
+          "Default",
+          "Active"
+        ]
+      },
+      "size": [
+        160,
+        32
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2047:13640": {
+      "name": "Sidebar Group Label - Nova",
+      "variantCount": 4,
+      "options": {
+        "Type": [
+          "Base",
+          "Action",
+          "Expanded",
+          "Collapsed"
+        ]
+      },
+      "size": [
+        160,
+        32
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2047:13471": {
+      "name": "Sidebar Badge - Nova",
+      "variantCount": 2,
+      "options": {
+        "Variant": [
+          "Default",
+          "Primary"
+        ]
+      },
+      "size": [
+        22,
+        22
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2351:3044": {
+      "name": "Sidebar - With Children",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        240,
+        800
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "2351:3048": {
+      "name": "Sidebar - Collapsed",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        52,
+        800
+      ],
+      "radius": {
+        "px": 8,
+        "token": "--radius-md"
+      }
+    },
+    "1999:12790": {
+      "name": "Chart",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        768,
+        400
+      ],
+      "radius": {
+        "px": 6,
+        "token": "--radius-sm"
+      }
+    },
+    "1999:13022": {
+      "name": "Legend",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        117,
+        16
+      ],
+      "radius": {
+        "px": 2,
+        "token": "--radius-2xs"
+      }
+    },
+    "1999:13135": {
+      "name": "Line chart",
+      "variantCount": 5,
+      "options": {
+        "Type": [
+          "Default",
+          "Interactive",
+          "Linear",
+          "Multiple",
+          "Step"
+        ]
+      },
+      "size": [
+        548.9928588867188,
+        157.2807159423828
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1999:13167": {
+      "name": "Area chart",
+      "variantCount": 5,
+      "options": {
+        "Type": [
+          "Interactive",
+          "Linear",
+          "Default",
+          "Step",
+          "Stacked"
+        ]
+      },
+      "size": [
+        438.28570556640625,
+        115.1515121459961
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1999:13206": {
+      "name": "Bar chart",
+      "variantCount": 5,
+      "options": {
+        "Type": [
+          "Interactive",
+          "Default",
+          "Horizontal",
+          "Multiple",
+          "Stacked"
+        ]
+      },
+      "size": [
+        424.0444641113281,
+        114.89612579345703
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1999:9214": {
+      "name": "Table Header",
+      "variantCount": 24,
+      "options": {
+        "Content": [
+          "Text",
+          "Sortable",
+          "Checkbox",
+          "Empty"
+        ],
+        "Alignment": [
+          "Left",
+          "Right"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active"
+        ]
+      },
+      "size": [
+        200,
+        36
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
+      }
+    },
+    "1999:9349": {
+      "name": "Table Cell",
+      "variantCount": 24,
+      "options": {
+        "Content": [
+          "Text (1 Line)",
+          "Text (2 Lines)",
+          "Checkbox",
+          "Slot"
+        ],
+        "Alignment": [
+          "Left",
+          "Right"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Active"
+        ]
+      },
+      "size": [
+        200,
+        35
+      ],
+      "radius": {
+        "px": 0,
+        "token": null
       }
     }
   }

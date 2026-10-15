@@ -37,7 +37,10 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith('.tsx'))) {
   const lines = readFileSync(new URL(file, DIR), 'utf8').split('\n')
   lines.forEach((line, i) => {
     const code = line.replace(/\/\/.*$/, '')
-    for (const re of RAW_COLOR) if (re.test(code)) problems.push(`${file}:${i + 1}  raw color: ${code.trim().slice(0, 120)}`)
+    // A color inside an attribute selector only matches a library's markup (Recharts draws
+    // stroke='#ccc' grid lines); the class then paints them with a token, e.g. [stroke='#ccc']]:stroke-border.
+    const painted = code.replace(/\[\w[\w-]*=['"]?#[0-9a-fA-F]{3,8}['"]?\]/g, '')
+    for (const re of RAW_COLOR) if (re.test(painted)) problems.push(`${file}:${i + 1}  raw color: ${code.trim().slice(0, 120)}`)
     let rest = code
     for (const literal of code.match(/"[^"]*"|'[^']*'|`[^`]*`/g) ?? []) {
       rest = rest.replace(literal, '""')
