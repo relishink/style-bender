@@ -31,6 +31,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - Where the kit and shadcn's real theme differ, shadcn's theme (in Git) wins and Figma is updated.
 - Card (`card.tsx`): designed in Figma by David ("Card - Nova - Confirmation", node 5021:12383), brought to code in Phase 4.
 - Pagination (`pagination.tsx`): from the kit's "Pagination" (node 1962:14050), built from our Buttons; number buttons map Figma `Active=On|Off` to `isActive`.
+- Input (`input.tsx`): code first. shadcn's Input plus a hover state; the Figma component "Input" (page "Input (style-bender)", node 5064:12273) was generated from it. Focus and error rings use `--ring-focus` / `--ring-error` (Figma cannot fade a variable, so faded colors are tokens).
 - The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
 - No Storybook.
 

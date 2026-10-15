@@ -178,3 +178,17 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 
 **Prompt that worked**
 > Add this Figma component of pagination to our component library. [Figma link]
+
+## 2026-10-15: Input, code first and pulled down into Figma
+
+**What we did**
+- The other direction: `shadcn add input` plus a hover state in code, then Claude generated a new Figma component "Input" from it on its own page, with State = Default, Hover, Focus, Error and Disabled and a Placeholder text property, all bound to variables and text styles.
+- Mapped it in `figma-map.json` (States map to CSS states). Parity: 214 values, 8 components, 1:1. Pixel diff on Default, Error and Disabled: 0.00–0.63%. Docs page shows all five Figma states next to live inputs.
+
+**What broke, and the fix**
+- The kit's "focus ring" effect styles did not match the code (0px solid vs 3px at 50%). Figma cannot fade a color variable (a bound color always uses the variable's alpha), so the faded ring colors became tokens: `--ring-focus` and `--ring-error`, in Git and in Figma.
+- A Figma drop shadow on a shape with no fill either does not draw, or draws through the transparent inside. The Input now has a `--background` fill in both places, and shadcn's dark-only tints were dropped so dark mode matches too.
+- The docs table shrank the Figma images to fit (Tailwind sets `max-width: 100%` on images). Fix: `max-w-none`.
+
+**Prompt that worked**
+> I want to show that we can pull something down into Figma. Add a simple component from shadcn: a typical input with active, hover, errors and such.

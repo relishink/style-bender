@@ -4,11 +4,12 @@ import { ButtonPage } from './styleguide/ButtonPage'
 import { CardPage } from './styleguide/CardPage'
 import { ColorPage } from './styleguide/ColorPage'
 import { Layout } from './styleguide/Layout'
+import { InputPage } from './styleguide/InputPage'
 import { PaginationPage } from './styleguide/PaginationPage'
 import { TypographyPage } from './styleguide/TypographyPage'
 import { VisualPage } from './styleguide/VisualPage'
 
-const pages: Record<string, () => React.JSX.Element> = { color: ColorPage, typography: TypographyPage, button: ButtonPage, banner: BannerPage, card: CardPage, pagination: PaginationPage }
+const pages: Record<string, () => React.JSX.Element> = { color: ColorPage, typography: TypographyPage, button: ButtonPage, banner: BannerPage, card: CardPage, pagination: PaginationPage, input: InputPage }
 const currentPath = () => window.location.hash.slice(1) || 'color'
 
 function App() {
