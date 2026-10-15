@@ -205,3 +205,17 @@ Putting the tool-cost constraint in the brief up front kept the whole session in
 - The wordmark is live text in Figma (Bricolage Grotesque ExtraBold), exported with outlined text, so code gets exact vector shapes without loading the font, and every color is a token class (`fill-brand-ink`), so light and dark come for free.
 - Brand colors use the exact sRGB hex values from the logo, not Tailwind v4's oklch violets, which render slightly differently.
 - Favicons cannot read CSS variables: `public/favicon.svg` copies the token values and says so.
+
+## 2026-10-15: Library batch 4 (forms, dates, layout, Sidebar, Chart, Data Table) and scrolling
+
+**What we did.** The style guide nav and page now scroll separately, and every page opens at the top. Batch 4 added Field, Input Group, Input OTP, Combobox, Native Select, Calendar, Date Picker, Item, Empty, Scroll Area, Resizable, Carousel, Sidebar, Chart and Data Table. That completes shadcn's set at library level: 72 Figma mappings, all 1:1.
+
+**What broke.**
+- `useEffect(() => el.scrollTo(0, 0))` crashed React: browsers now return a Promise from `scrollTo`, and React treated it as a cleanup function. Fix: a block body that returns nothing.
+- A Python find-and-replace that added imports also matched the same text inside a docs `importLine` string. Typecheck caught it. Lesson: anchor replacements to the start of a line.
+- `npm install @tanstack/react-table` pulled v9, whose API is new; shadcn's Data Table is written for v8, so it is pinned to `^8`.
+- The parity check took the first `rounded-*` class in a file as the component's radius. That fails for Calendar (radius set through `--cell-radius`) and sub-parts (ComboboxChip, Sidebar parts), and on the Figma side the first rounded shape was sometimes a nav button. Fix: `codeRadius` in the map and `RADIUS_FROM` in the snapshot script, with a regression test.
+
+**Fixes (Git wins), Figma updated:** calendar cells radius-sm → radius-md (1,008 instance overrides), Scrollbar thumb → radius-full, vertical Carousel arrows → radius-full, Resizable grip → radius-lg, Sidebar 2nd-level items, group labels and badge → radius-md, chart legend swatch → radius-2xs.
+
+**Worth repeating.** "Keep cranking" worked because each batch ended with the same gate: check:tokens, parity, typecheck, a browser smoke test, then commit. The pre-commit hook makes skipping the gate impossible.

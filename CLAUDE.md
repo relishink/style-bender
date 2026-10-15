@@ -15,7 +15,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 2. **Commit straight to `main`.** No branches or PRs unless David asks. Keep commits small, one concern each.
 3. **No hard-coded colors, font sizes or spacing in components.** Spacing classes read `--spacing` and `text-xs/sm/base/lg` read the typography tokens, so Tailwind's scale is token-backed. Everything comes from tokens. No Tailwind arbitrary values such as `bg-[#...]`.
    - Colors, radius, spacing and type come from `tokens/` via `src/styles/tokens.css` (generated, never edit by hand). Heading and Text use the typography tokens.
-   - Enforced: `npm run check:tokens` (also in the pre-commit hook and CI).
+   - Enforced: `npm run check:tokens` (also in the pre-commit hook and CI). Allowed: arbitrary values built only from tokens (`calc(var(--spacing)*…)`), motion mechanics, and hex inside attribute selectors that only target a library's markup (`[stroke='#ccc']]:stroke-border`).
 4. **Show a short plan before each phase and wait for David's OK.**
 5. **After each working session, append to `docs/lesson-log.md`:** what we did, what broke, the fix, and any prompt that worked well.
 
@@ -33,6 +33,7 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 - Pagination (`pagination.tsx`): from the kit's "Pagination" (node 1962:14050), built from our Buttons; number buttons map Figma `Active=On|Off` to `isActive`.
 - Input (`input.tsx`): code first. shadcn's Input plus a hover state; the Figma component "Input" (page "Input (style-bender)", node 5064:12273) was generated from it. Focus and error rings use `--ring-focus` / `--ring-error` (Figma cannot fade a variable, so faded colors are tokens).
 - Brand (`logo.tsx`: `Logo`, `LogoMark`): designed in Claude Design, built in Figma as "Symbol" (5083:22) and "Logo" (5083:23) on page "Brand (style-bender)", exported as outlined SVG. Colors are `violet`/`ink` primitives and `brand-*` roles; brand colors are for the logo only, components stay neutral. `public/favicon.svg` copies the brand hex values (browsers can't read CSS variables there).
+- Library (`level: "library"` in `figma-map.json`, docs in `src/styleguide/library/batch*.tsx`): the rest of shadcn's set, about 55 components. Each is token-clean, mapped to the kit's Figma component and checked by parity, with a 4-tab docs page. There is no Figma render or pixel diff at this level. Popover and Collapsible are code only (the free kit has neither). Data Table uses `@tanstack/react-table` v8 (shadcn's docs target v8). Form controls (Select, Textarea, Input Group, Input OTP, Native Select, Combobox) share Input's `--ring-focus` / `--ring-error` rings and background.
 - The style guide app follows Carbon: Foundations and Components sections; each component page has Guidelines, Specifications, Code and Accessibility tabs, with live examples rendered by the app itself.
 - No Storybook.
 
@@ -56,6 +57,8 @@ Vite + React + TypeScript, shadcn/ui (components copied into `src/components/ui`
 1. Change code and/or tokens; run `npm run tokens`.
 2. Update Figma through `use_figma` (bind to variables, never raw values).
 3. Add or update the entry in `figma-map.json` (a variant can map to a cva prop value, or with `"kind": "boolean"` to a true/false prop); add its node ID to `COMPONENT_SET_IDS` in `parity/figma-snapshot.figma.js`.
+   - Radius: parity compares the file's first `rounded-*` class with Figma's first rounded shape. When that is the wrong part, use `codeRadius` (`{ token, from }`; `from` must stay in the file) and/or `RADIUS_FROM` in the snapshot script (names the Figma part to read), or `skipRadius` with a reason.
+   - Fix `import { cn } from "cn"` in new shadcn files to `@/lib/utils`.
    - `shadcn add` may offer to overwrite our customised `button.tsx`: always answer no.
 4. Re-run the snapshot, save `parity/figma-snapshot.json`, run `npm run parity` until it reports 1:1.
 5. Re-export the Figma renders for the docs page and check sizes in the browser (Figma strokes sit inside the box: use `inset-ring`, not `border`, when height must match).
