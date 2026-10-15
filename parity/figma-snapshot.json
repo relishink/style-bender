@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T20:18:56.138Z",
+  "exportedAt": "2026-10-15T20:25:00.000Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -1285,8 +1285,8 @@
         32
       ],
       "radius": {
-        "px": 0,
-        "token": null
+        "px": 10,
+        "token": "--radius"
       }
     },
     "1953:17986": {
@@ -1303,8 +1303,8 @@
         32
       ],
       "radius": {
-        "px": 0,
-        "token": null
+        "px": 10,
+        "token": "--radius"
       }
     },
     "1957:49237": {
@@ -1316,8 +1316,8 @@
         32
       ],
       "radius": {
-        "px": 0,
-        "token": null
+        "px": 10,
+        "token": "--radius"
       }
     },
     "5064:12273": {
@@ -1433,8 +1433,9 @@
         16
       ],
       "radius": {
-        "px": 0,
-        "token": null
+        "px": 999,
+        "token": "--radius-full",
+        "ellipse": true
       }
     },
     "2255:18110": {

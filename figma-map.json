@@ -168,7 +168,8 @@
         "Button - Nova, Ghost (Previous / Next)": "<PaginationPrevious> / <PaginationNext>",
         "Pagination Number Button": "<PaginationLink isActive>",
         "Pagination Ellipsis": "<PaginationEllipsis>"
-      }
+      },
+      "skipRadius": "built from our Button (code) and Button - Nova (Figma); the radius is checked under Button and by the pixel diff"
     },
     {
       "name": "Pagination Number Button",
@@ -190,7 +191,8 @@
             "Off": false
           }
         }
-      }
+      },
+      "skipRadius": "built from our Button (code) and Button - Nova (Figma); the radius is checked under Button and by the pixel diff"
     },
     {
       "name": "Pagination Ellipsis",
@@ -203,7 +205,8 @@
         "file": "src/components/ui/pagination.tsx",
         "export": "PaginationEllipsis"
       },
-      "props": {}
+      "props": {},
+      "skipRadius": "built from our Button (code) and Button - Nova (Figma); the radius is checked under Button and by the pixel diff"
     },
     {
       "name": "Input",
@@ -342,7 +345,8 @@
         "Type": "Mirrored is a rotated copy",
         "Size": "size-3 / size-4 class"
       },
-      "level": "library"
+      "level": "library",
+      "skipRadius": "a Lucide loader icon in code and a circle in Figma; no corner radius to compare"
     },
     {
       "name": "Kbd",
