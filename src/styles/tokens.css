@@ -53,6 +53,12 @@
   --red-400: oklch(70.19% 0.1895 22.16);
   --red-600: oklch(58.33% 0.2388 28.49);
   --ring: var(--neutral-400);
+  --ring-alpha-neutral-400-50: oklch(70.8% 0 0 / 0.5);
+  --ring-alpha-neutral-500-50: oklch(55.6% 0 0 / 0.5);
+  --ring-alpha-red-400-40: oklch(70.19% 0.1895 22.16 / 0.4);
+  --ring-alpha-red-600-20: oklch(58.33% 0.2388 28.49 / 0.2);
+  --ring-error: var(--ring-alpha-red-600-20);
+  --ring-focus: var(--ring-alpha-neutral-400-50);
   --secondary: var(--neutral-100);
   --secondary-foreground: var(--neutral-900);
   --sidebar: var(--neutral-50);
@@ -212,6 +218,9 @@
     --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --ring-alpha-red-400-40: oklch(70.4% 0.191 22.22 / 0.4);
+    --ring-alpha-red-600-20: oklch(57.7% 0.245 27.33 / 0.2);
+    --ring-error: var(--ring-alpha-red-600-20);
     --success: var(--green-700);
     --warning: var(--amber-700);
   }
@@ -226,6 +235,9 @@
     --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --ring-alpha-red-400-40: oklch(70.4% 0.191 22.22 / 0.4);
+    --ring-alpha-red-600-20: oklch(57.7% 0.245 27.33 / 0.2);
+    --ring-error: var(--ring-alpha-red-600-20);
     --success: var(--green-700);
     --warning: var(--amber-700);
   }
@@ -282,6 +294,12 @@
   --red-400: oklch(70.19% 0.1895 22.16);
   --red-600: oklch(58.33% 0.2388 28.49);
   --ring: var(--neutral-500);
+  --ring-alpha-neutral-400-50: oklch(70.8% 0 0 / 0.5);
+  --ring-alpha-neutral-500-50: oklch(55.6% 0 0 / 0.5);
+  --ring-alpha-red-400-40: oklch(70.19% 0.1895 22.16 / 0.4);
+  --ring-alpha-red-600-20: oklch(58.33% 0.2388 28.49 / 0.2);
+  --ring-error: var(--ring-alpha-red-400-40);
+  --ring-focus: var(--ring-alpha-neutral-500-50);
   --secondary: var(--neutral-800);
   --secondary-foreground: var(--neutral-50);
   --sidebar: var(--neutral-900);
@@ -441,6 +459,9 @@
     --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --ring-alpha-red-400-40: oklch(70.4% 0.191 22.22 / 0.4);
+    --ring-alpha-red-600-20: oklch(57.7% 0.245 27.33 / 0.2);
+    --ring-error: var(--ring-alpha-red-400-40);
     --success: var(--green-400);
     --warning: var(--amber-400);
   }
@@ -455,6 +476,9 @@
     --green-700: oklch(52.7% 0.154 150.1);
     --red-400: oklch(70.4% 0.191 22.22);
     --red-600: oklch(57.7% 0.245 27.33);
+    --ring-alpha-red-400-40: oklch(70.4% 0.191 22.22 / 0.4);
+    --ring-alpha-red-600-20: oklch(57.7% 0.245 27.33 / 0.2);
+    --ring-error: var(--ring-alpha-red-400-40);
     --success: var(--green-400);
     --warning: var(--amber-400);
   }

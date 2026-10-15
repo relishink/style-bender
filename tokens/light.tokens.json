@@ -85,6 +85,14 @@
       "$type": "color",
       "$value": "{primitive.neutral.400}"
     },
+    "ring-focus": {
+      "$type": "color",
+      "$value": "{primitive.ring-alpha.neutral-400-50}"
+    },
+    "ring-error": {
+      "$type": "color",
+      "$value": "{primitive.ring-alpha.red-600-20}"
+    },
     "chart-1": {
       "$type": "color",
       "$value": "{primitive.neutral.300}"

@@ -1,5 +1,6 @@
 import { Banner } from '@/components/ui/banner'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination'
 
@@ -21,6 +22,11 @@ export function VisualPage() {
       {banners.map((k) => (
         <div key={k} data-visual={`banner-${k}`} data-scale="1" className="w-100">
           <Banner variant={k} title="Title" />
+        </div>
+      ))}
+      {(['default', 'error', 'disabled'] as const).map((state) => (
+        <div key={state} data-visual={`input-${state}`} data-scale="2" className="w-80">
+          <Input placeholder="Placeholder" aria-invalid={state === 'error' || undefined} disabled={state === 'disabled'} />
         </div>
       ))}
       <div data-visual="pagination" data-scale="2" className="inline-flex">

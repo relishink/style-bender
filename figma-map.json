@@ -204,6 +204,33 @@
         "export": "PaginationEllipsis"
       },
       "props": {}
+    },
+    {
+      "name": "Input",
+      "figma": {
+        "componentSet": "Input",
+        "nodeId": "5064:12273",
+        "page": "Input (style-bender)"
+      },
+      "code": {
+        "file": "src/components/ui/input.tsx",
+        "export": "Input"
+      },
+      "props": {},
+      "states": {
+        "figmaProperty": "State",
+        "values": {
+          "Default": "rest",
+          "Hover": ":hover",
+          "Focus": ":focus-visible",
+          "Error": "[aria-invalid]",
+          "Disabled": ":disabled"
+        }
+      },
+      "otherProperties": {
+        "Placeholder (text)": "placeholder"
+      },
+      "origin": "Generated in Figma from code (code first)."
     }
   ]
 }

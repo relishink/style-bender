@@ -6,7 +6,7 @@
 // options of each component set in figma-map.json.
 //
 // Keep this list in sync with the nodeIds in figma-map.json (npm run parity tells you if one is missing).
-const COMPONENT_SET_IDS = ['1953:29720', '1953:30428', '1953:32858', '5021:12383', '1962:14050', '1953:17986', '1957:49237']
+const COMPONENT_SET_IDS = ['1953:29720', '1953:30428', '1953:32858', '5021:12383', '1962:14050', '1953:17986', '1957:49237', '5064:12273']
 const hex = (c) =>
   '#' + [c.r, c.g, c.b].map((x) => Math.round(x * 255).toString(16).padStart(2, '0')).join('')
 const collections = await figma.variables.getLocalVariableCollectionsAsync()
