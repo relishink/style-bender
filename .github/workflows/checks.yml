@@ -1,0 +1,26 @@
+name: Design system checks
+
+# Backstop for the pre-commit hook: every push to main must build, lint,
+# use only token-backed values, and match the committed Figma snapshot.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Build (tokens, typecheck, bundle)
+        run: npm run build
+      - run: npm run lint
+      - name: No hard-coded values (rule 3)
+        run: npm run check:tokens
+      - name: Git tokens and Figma snapshot are 1:1
+        run: npm run parity
