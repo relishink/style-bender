@@ -813,6 +813,197 @@
       "figmaOnly": {
         "Type": "Formatted and Shortcut are content (bold text, a Kbd) inside TooltipContent"
       }
+    },
+    {
+      "name": "Dialog",
+      "figma": {
+        "componentSet": "Dialog - Nova",
+        "nodeId": "1953:22846",
+        "page": "Dialog •"
+      },
+      "code": {
+        "file": "src/components/ui/dialog.tsx",
+        "export": "DialogContent"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "layout examples: Desktop/Mobile width comes from max-w-* on DialogContent; scrollable content sits in an overflow-y-auto block"
+      }
+    },
+    {
+      "name": "Alert Dialog",
+      "figma": {
+        "componentSet": "Alert Dialog - Nova",
+        "nodeId": "1953:32398",
+        "page": "Alert Dialog •"
+      },
+      "code": {
+        "file": "src/components/ui/alert-dialog.tsx",
+        "export": "AlertDialogContent"
+      },
+      "props": {
+        "size": {
+          "figmaProperty": "Size",
+          "kind": "prop",
+          "checkValues": true,
+          "values": {
+            "Regular": "default",
+            "Small": "sm"
+          }
+        }
+      },
+      "level": "library",
+      "figmaOnly": {
+        "Variant": "Destructive = variant=\"destructive\" on AlertDialogAction"
+      }
+    },
+    {
+      "name": "Sheet",
+      "figma": {
+        "componentSet": "Sheet",
+        "nodeId": "1953:14738",
+        "page": "Sheet •"
+      },
+      "code": {
+        "file": "src/components/ui/sheet.tsx",
+        "export": "SheetContent"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Scrollable": "content in an overflow-y-auto block"
+      },
+      "codeOnly": {
+        "side": "top / right / bottom / left; Figma shows the right side only"
+      },
+      "skipRadius": "the sheet is square in both; the rounded shape in Figma is the kit's content placeholder"
+    },
+    {
+      "name": "Drawer",
+      "figma": {
+        "componentSet": "Drawer - Nova",
+        "nodeId": "1962:14345",
+        "page": "Drawer •"
+      },
+      "code": {
+        "file": "src/components/ui/drawer.tsx",
+        "export": "DrawerContent"
+      },
+      "props": {},
+      "level": "library",
+      "skipRadius": "the first rounded class in code is the swipe handle; the panel's rounded-t-xl matches Figma's top corners (radius-xl)"
+    },
+    {
+      "name": "Hover Card",
+      "figma": {
+        "componentSet": "Hover Card",
+        "nodeId": "1962:14383",
+        "page": "Hover Card •"
+      },
+      "code": {
+        "file": "src/components/ui/hover-card.tsx",
+        "export": "HoverCardContent"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Dropdown Menu",
+      "figma": {
+        "componentSet": "Dropdown Menu - Nova",
+        "nodeId": "1953:21264",
+        "page": "Dropdown Menu •"
+      },
+      "code": {
+        "file": "src/components/ui/dropdown-menu.tsx",
+        "export": "DropdownMenuContent"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Spacing": "example layouts of the menu content",
+        "Style": "example layouts of the menu content"
+      }
+    },
+    {
+      "name": "Context Menu",
+      "figma": {
+        "componentSet": "Dropdown Menu - Nova",
+        "nodeId": "1953:21264",
+        "page": "Dropdown Menu •"
+      },
+      "code": {
+        "file": "src/components/ui/context-menu.tsx",
+        "export": "ContextMenuContent"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "note": "the kit has no Context Menu; it shares the Dropdown Menu's panel and items"
+      }
+    },
+    {
+      "name": "Menubar",
+      "figma": {
+        "componentSet": "Menubar - Nova",
+        "nodeId": "2047:14217",
+        "page": "Menubar •"
+      },
+      "code": {
+        "file": "src/components/ui/menubar.tsx",
+        "export": "Menubar"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Navigation Menu",
+      "figma": {
+        "componentSet": "Navigation Menu - Nova",
+        "nodeId": "2078:525",
+        "page": "Navigation Menu •"
+      },
+      "code": {
+        "file": "src/components/ui/navigation-menu.tsx",
+        "export": "NavigationMenu"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Command",
+      "figma": {
+        "componentSet": "Command - Nova",
+        "nodeId": "1999:15000",
+        "page": "Command •"
+      },
+      "code": {
+        "file": "src/components/ui/command.tsx",
+        "export": "Command"
+      },
+      "props": {},
+      "level": "library"
+    },
+    {
+      "name": "Sonner",
+      "figma": {
+        "componentSet": "Sonner - Nova",
+        "nodeId": "2047:14542",
+        "page": "Sonner •"
+      },
+      "code": {
+        "file": "src/components/ui/sonner.tsx",
+        "export": "Toaster"
+      },
+      "props": {},
+      "level": "library",
+      "figmaOnly": {
+        "Type": "toast.success / error / ... calls",
+        "Stack": "Sonner stacks toasts itself",
+        "Order": "Sonner stacks toasts itself"
+      },
+      "skipRadius": "radius is passed to Sonner as --border-radius: var(--radius)"
     }
   ]
 }

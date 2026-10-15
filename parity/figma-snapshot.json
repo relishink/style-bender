@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-15T17:48:25.633Z",
+  "exportedAt": "2026-10-15T17:57:03.228Z",
   "variables": {
     "--radius-sm": {
       "figma": "radius-sm",
@@ -1712,6 +1712,183 @@
       "radius": {
         "px": 8,
         "token": "--radius-md"
+      }
+    },
+    "1953:22846": {
+      "name": "Dialog - Nova",
+      "variantCount": 4,
+      "options": {
+        "Type": [
+          "Desktop scrollable",
+          "Desktop",
+          "Mobile",
+          "Mobile full Screen scrollable"
+        ]
+      },
+      "size": [
+        390,
+        480
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
+      }
+    },
+    "1953:32398": {
+      "name": "Alert Dialog - Nova",
+      "variantCount": 4,
+      "options": {
+        "Size": [
+          "Regular",
+          "Small"
+        ],
+        "Variant": [
+          "Destructive",
+          "Regular"
+        ]
+      },
+      "size": [
+        340,
+        156
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
+      }
+    },
+    "1953:14738": {
+      "name": "Sheet",
+      "variantCount": 2,
+      "options": {
+        "Scrollable": [
+          "False",
+          "True"
+        ]
+      },
+      "size": [
+        342,
+        844
+      ],
+      "radius": {
+        "px": 6,
+        "token": "--radius-sm"
+      }
+    },
+    "1962:14345": {
+      "name": "Drawer - Nova",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        390,
+        300
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
+      }
+    },
+    "1962:14383": {
+      "name": "Hover Card",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        200,
+        40
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1953:21264": {
+      "name": "Dropdown Menu - Nova",
+      "variantCount": 10,
+      "options": {
+        "Spacing": [
+          "None",
+          "2px",
+          "8px",
+          "16px",
+          "24px"
+        ],
+        "Style": [
+          "Default",
+          "Translucent"
+        ]
+      },
+      "size": [
+        200,
+        20
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "2047:14217": {
+      "name": "Menubar - Nova",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        164,
+        28
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "2078:525": {
+      "name": "Navigation Menu - Nova",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        416,
+        32
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
+      }
+    },
+    "1999:15000": {
+      "name": "Command - Nova",
+      "variantCount": 1,
+      "options": {},
+      "size": [
+        480,
+        373
+      ],
+      "radius": {
+        "px": 14,
+        "token": "--radius-xl"
+      }
+    },
+    "2047:14542": {
+      "name": "Sonner - Nova",
+      "variantCount": 12,
+      "options": {
+        "Type": [
+          "1 line",
+          "2 lines"
+        ],
+        "Stack": [
+          "1 Level",
+          "2 Levels",
+          "3 Levels"
+        ],
+        "Order": [
+          "Bottom to Top",
+          "Top to Bottom"
+        ]
+      },
+      "size": [
+        356,
+        52
+      ],
+      "radius": {
+        "px": 10,
+        "token": "--radius"
       }
     }
   }
