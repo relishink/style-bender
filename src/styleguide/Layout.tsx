@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
 import { Logo } from '@/components/ui/logo'
 import { routes } from './routes'
@@ -6,9 +6,14 @@ import { text } from './type'
 
 export function Layout({ current, children }: { current: string; children: ReactNode }) {
   const toggleTheme = () => document.documentElement.classList.toggle('dark')
+  // The nav and the page scroll separately; a new page always starts at the top.
+  const content = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    content.current?.scrollTo(0, 0)
+  }, [current])
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
-      <nav className="w-60 shrink-0 border-r border-border bg-sidebar p-6 text-sidebar-foreground">
+    <div className="flex h-screen overflow-hidden bg-background text-foreground">
+      <nav className="w-60 shrink-0 overflow-y-auto overscroll-contain border-r border-border bg-sidebar p-6 text-sidebar-foreground">
         <a href="#brand" className="block" aria-label="Style Bender style guide, brand page"><Logo className="h-7" /></a>
         {(['Foundations', 'Components', 'Library'] as const).map((section) => (
           <div key={section} className="mt-8">
@@ -36,8 +41,8 @@ export function Layout({ current, children }: { current: string; children: React
           </div>
         ))}
       </nav>
-      <div className="flex-1">
-        <header className="flex justify-end border-b border-border px-10 py-4">
+      <div ref={content} className="min-w-0 flex-1 overflow-y-auto">
+        <header className="sticky top-0 z-10 flex justify-end border-b border-border bg-background px-10 py-4">
           <Button variant="outline" size="sm" onClick={toggleTheme}>Toggle dark mode</Button>
         </header>
         <main className="max-w-5xl px-10 py-10">{children}</main>
