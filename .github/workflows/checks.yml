@@ -24,3 +24,13 @@ jobs:
         run: npm run check:tokens
       - name: Git tokens and Figma snapshot are 1:1
         run: npm run parity
+      - name: Install headless Chromium for the pixel diff
+        run: npx playwright install --with-deps chromium
+      - name: Components render like their Figma exports
+        run: npm run visual
+      - name: Keep the diff images when the pixel diff fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diff
+          path: parity/visual/
